@@ -1,0 +1,91 @@
+
+@import "reset-min.css";
+@import "variables";
+
+
+html {
+    background-color: @fondo;
+}
+
+#background {
+    width: 960px;
+    height: 2000px;
+    margin: 20px auto;
+    background-repeat: repeat-y;
+}
+
+#background.sucursal {
+    background-image: url('/images/backgrounds/sucursal.gif');
+}
+#background.agentes {
+    background-image: url('/images/backgrounds/agentes.gif');
+}
+#background.elpalo {
+    background-image: url('/images/backgrounds/elpalo.gif');
+}
+
+#page {
+    width: 872px;
+    margin: 0 auto;
+}
+
+#header {
+    width: 100%;
+    overflow: hidden;
+}
+
+#logo {
+    width: 143px; height: 145px;
+    background-repeat: none;
+    float: left;
+}
+#logo.logo_off {
+    background-image: url('/images/logo_off.png');
+}
+#banner {
+    width: 727px;
+    height: 144px;
+    float: left;
+    border: 1px solid @verde;
+    border-bottom: 0px;
+}
+
+#menu {
+    width: 870px;
+    height: 35px;
+    overflow: hidden;
+    border: 1px solid @verde;
+}
+#menu li {
+    display: block;
+    overflow: hidden;
+    text-indent: -1000px;
+    float: left;
+    height: 35px;
+    margin-left: -1px;
+    background-repeat: no-repeat;
+}
+#menu li > * {
+    display: block;
+    height: 35px;
+    border-left: 1px solid @verde;
+    border-right: 1px solid @verde;
+}
+
+#menu .sucursal {
+    width: 280px;
+    background-image: url('/images/sucursal_on.png');
+}
+#menu .agentes {
+    width: 279px;
+    background-image: url('/images/agentes_off.png');
+}
+#menu .elpalo {
+    width: 269px;
+    background-image: url('/images/elpalo_off.png');
+}
+#menu .lapasta {
+    width: 39px;
+    border-right: 0px;
+    background-image: url('/images/lapasta_off.png');
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <title>FLO6x8 - <%= yield :title %></title>
+    <!-- link rel="icon" href="images/e3e.ico" type="image/x-icon" / -->
+    <%= stylesheet_link_tag 'flo_public' %>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+  </head>
+  <body>
+    <div id="background" class="<%= action_name %>">
+      <div id="page">
+        <div id="header">
+          <div id="logo" class="logo_off"></div>
+          <div id="banner"></div>
+        </div>
+        <ul id="menu">
+          <li><%= section('sucursal') %></li>
+          <li><%= section('agentes') %></li>
+          <li><%= section('elpalo') %></li>
+          <li><%= section('lapasta') %></li>
+        </ul>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

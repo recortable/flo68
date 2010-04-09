@@ -7,18 +7,18 @@
     <%= stylesheet_link_tag 'flo_public' %>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
   </head>
-  <body>
+  <body class="<%= action_name %>">
     <div id="background" class="<%= action_name %>">
       <div id="page">
         <div id="header">
-          <div id="logo" class="logo_off"></div>
+          <div id="logo"></div>
           <div id="banner"></div>
         </div>
         <ul id="menu">
-          <li><%= section('sucursal') %></li>
-          <li><%= section('agentes') %></li>
-          <li><%= section('elpalo') %></li>
-          <li><%= section('lapasta') %></li>
+          <li><%= section('intro') %></li>
+          <li><%= section('acciones') %></li>
+          <li><%= section('tutorial') %></li>
+          <li><%= section('faq') %></li>
         </ul>
         <%= yield %>
       </div>

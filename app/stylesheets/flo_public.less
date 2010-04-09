@@ -7,6 +7,10 @@ html {
     background-color: @fondo;
 }
 
+no.body.acciones {
+    background-color: #1F1F1F;
+}
+
 #background {
     width: 960px;
     height: 2000px;
@@ -14,14 +18,14 @@ html {
     background-repeat: repeat-y;
 }
 
-#background.sucursal {
-    background-image: url('/images/backgrounds/sucursal.gif');
+#background.intro {
+    background-image: url('/images/backgrounds/intro.gif');
 }
-#background.agentes {
-    background-image: url('/images/backgrounds/agentes.gif');
+#background.acciones {
+    background-image: url('/images/backgrounds/acciones.gif');
 }
-#background.elpalo {
-    background-image: url('/images/backgrounds/elpalo.gif');
+#background.tutorial {
+    background-image: url('/images/backgrounds/tutorial.gif');
 }
 
 #page {
@@ -38,10 +42,10 @@ html {
     width: 143px; height: 145px;
     background-repeat: none;
     float: left;
+    background-image: url('/images/pieces/logo_off.png');
 }
-#logo.logo_off {
-    background-image: url('/images/logo_off.png');
-}
+body.intro #logo {background-image: url('/images/pieces/logo_intro.png');}
+
 #banner {
     width: 727px;
     height: 144px;
@@ -72,20 +76,18 @@ html {
     border-right: 1px solid @verde;
 }
 
-#menu .sucursal {
-    width: 280px;
-    background-image: url('/images/sucursal_on.png');
-}
-#menu .agentes {
-    width: 279px;
-    background-image: url('/images/agentes_off.png');
-}
-#menu .elpalo {
-    width: 269px;
-    background-image: url('/images/elpalo_off.png');
-}
-#menu .lapasta {
-    width: 39px;
-    border-right: 0px;
-    background-image: url('/images/lapasta_off.png');
-}
+#menu .intro {width: 280px;}
+#menu a.intro {background-image: url('/images/pieces/intro_off.png');}
+#menu span.intro {background-image: url('/images/pieces/intro_on.png');}
+
+#menu .acciones {width: 279px;}
+#menu a.acciones {background-image: url('/images/pieces/acciones_off.png');}
+#menu span.acciones {background-image: url('/images/pieces/acciones_on.png');}
+
+#menu .tutorial {width: 269px;}
+#menu a.tutorial {background-image: url('/images/pieces/tutorial_off.png');}
+#menu span.tutorial {background-image: url('/images/pieces/tutorial_on.png');}
+
+#menu .faq {width: 39px;border-right: 0px;}
+#menu a.faq {background-image: url('/images/pieces/faq_off.png');}
+#menu span.faq {background-image: url('/images/pieces/faq_on.png');}

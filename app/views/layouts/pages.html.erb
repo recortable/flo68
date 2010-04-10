@@ -20,7 +20,14 @@
           <li><%= section('tutorial') %></li>
           <li><%= section('faq') %></li>
         </ul>
-        <%= yield %>
+        <div id="content">
+          <div id="viewer"></div>
+          <div id="video"></div>
+          <div id="body">
+            <%= yield %>
+          </div>
+          <div id="comments"></div>
+        </div>
       </div>
     </div>
   </body>

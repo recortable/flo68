@@ -117,3 +117,16 @@ body.intro #logo { background-image: url('/images/pieces/logo_intro.png'); }
 }
 #menu a.faq { background-image: url('/images/pieces/faq_off.png'); }
 #menu span.faq { background-image: url('/images/pieces/faq_on.png'); }
+#content {
+  width: 871px;
+  height: 391px;
+  margin-top: -1px;
+  background: url('/images/pieces/viewer.gif') no-repeat;
+}
+#body {
+  color: white;
+  position: relative;
+  left: 5px;
+  top: 5px;
+  width: 430px;
+}

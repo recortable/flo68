@@ -5,10 +5,14 @@
     <title>FLO6x8 - <%= yield :title %></title>
     <!-- link rel="icon" href="images/e3e.ico" type="image/x-icon" / -->
     <%= stylesheet_link_tag 'flo_public' %>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.min.js"></script>
+    <% if RAILS_ENV == 'production' %>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+    <% else %>
+      <%= javascript_include_tag 'jquery.min.js' %>
+    <% end %>
   </head>
-  <body class="<%= action_name %>">
-    <div id="background" class="<%= action_name %>">
+  <body class="<%= @section.name %>">
+    <div id="background" class="<%= @section.name %>">
       <div id="page">
         <div id="header">
           <div id="logo"></div>
@@ -20,13 +24,20 @@
           <li><%= section('tutorial') %></li>
           <li><%= section('faq') %></li>
         </ul>
-        <div id="content">
-          <div id="viewer"></div>
-          <div id="video"></div>
-          <div id="body">
+        <div id="main">
+          <div id="content">
+            <div id="content_top">&nbsp;</div>
             <%= yield %>
           </div>
-          <div id="comments"></div>
+          <div id="side">
+            <div id="viewer">
+              <div id="video"></div>
+            </div>
+            <div id="comments-head">&nbsp;</div>
+            <div id="comments">
+              <%= yield :comments %>
+            </div>
+          </div>
         </div>
       </div>
     </div>

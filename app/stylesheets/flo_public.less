@@ -44,7 +44,10 @@ no.body.acciones {
     float: left;
     background-image: url('/images/pieces/logo_off.png');
 }
+
 body.intro #logo {background-image: url('/images/pieces/logo_intro.png');}
+body.acciones #logo {background-image: url('/images/pieces/logo_acciones.png');}
+body.tutorial #logo {background-image: url('/images/pieces/logo_tutorial.png');}
 
 #banner {
     width: 727px;
@@ -92,6 +95,19 @@ body.intro #logo {background-image: url('/images/pieces/logo_intro.png');}
 #menu a.faq {background-image: url('/images/pieces/faq_off.png');}
 #menu span.faq {background-image: url('/images/pieces/faq_on.png');}
 
-#content {width: 871px; height: 391px; margin-top: -1px;
-    background: url('/images/pieces/viewer.gif') no-repeat;}
-#body {color: white; position: relative; left: 5px; top: 5px; width: 430px;}
+#main {width: 100%; overflow: hidden;}
+#content {width: 438px; float: left;}
+#content_top {width: 437px; height: 9px; border-left: 1px solid @verde; border-bottom: 1px solid @verde;}
+
+#side {width: 434px; float: left;}
+#viewer {width: 434px; height: 362px; background: url('/images/pieces/viewer1.gif') no-repeat; overflow: hidden;}
+#video {margin-left: 6px; margin-top: 36px; width: 427px; height: 319px; background-color: black;}
+#comments-head {width: 433px; height: 28px; border-left: 1px solid @verde;
+                background: url('/images/pieces/comentarios.png') no-repeat;}
+
+#video_list {margin: 10px 0; color: @verde; .monospace;}
+#video_list .video {width: 100%; overflow: hidden; margin-top: -1px; border: 1px solid @verde; }
+#video_list .preview {float: left; width: 100px; height: 75px; overflow: hidden;}
+#video_list .video label {display: block; margin: 30px 0 0 120px;}
+#video_list .video p {display: block; margin: 10px 0 0 120px;}
+#video_list .video a {text-decoration: none; color: @rojo; }

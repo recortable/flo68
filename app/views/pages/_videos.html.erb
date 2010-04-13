@@ -1,0 +1,12 @@
+
+<div id="video_list">
+  <% videos.each do |video| %>
+    <% div_for video do %>
+      <div class="preview"><%= image_tag video.preview.url %></div>
+      <div class="content">
+        <label><%= video.title %></label>
+        <p>Haz click <a href="#" rel="video:/<%= video.id %>">aquí</a> para ver el vídeo</p>
+      </div>
+    <% end %>
+  <% end %>
+</div>

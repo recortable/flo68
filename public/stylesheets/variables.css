@@ -8,4 +8,8 @@
 
 
 
-*/
+*/.monospace {
+  font-family: Courier, monospace;
+  font-size: 80%;
+  letter-spacing: 0.1em;
+}

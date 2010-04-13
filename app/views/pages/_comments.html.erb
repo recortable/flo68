@@ -1,0 +1,7 @@
+<% content_for :comments do %>
+  <% comments.each do |comment| %>
+    <% div_for comment do %>
+      <p><%= comment.body %></p>
+    <% end %>
+  <% end %>
+<% end %>

@@ -56,7 +56,6 @@ html { background-color: black; }
 no.body.acciones { background-color: #1f1f1f; }
 #background {
   width: 960px;
-  height: 2000px;
   margin: 20px auto;
   background-repeat: repeat-y;
 }
@@ -88,6 +87,9 @@ body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png');
   border: 1px solid #93f7f7;
   border-bottom: 0px;
 }
+body.intro #banner { background-image: url('/images/pieces/banner_intro.png'); }
+body.acciones #banner { background-image: url('/images/pieces/banner_acciones.png'); }
+body.tutorial #banner { background-image: url('/images/pieces/banner_tutorial.png'); }
 #menu {
   width: 870px;
   height: 35px;
@@ -141,6 +143,7 @@ body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png');
 #side {
   width: 434px;
   float: left;
+  margin-left: -1px;
 }
 #viewer {
   width: 434px;
@@ -162,14 +165,14 @@ body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png');
   background: url('/images/pieces/comentarios.png') no-repeat;
 }
 #video_list {
-  margin: 10px 0;
+  margin: 10px 0 0 0;
   color: #93f7f7;
   font-family: Courier, monospace;
   font-size: 80%;
   letter-spacing: 0.1em;
 }
 #video_list .video {
-  width: 100%;
+  width: 436px;
   overflow: hidden;
   margin-top: -1px;
   border: 1px solid #93f7f7;
@@ -187,8 +190,29 @@ body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png');
 #video_list .video p {
   display: block;
   margin: 10px 0 0 120px;
+  background-color: black;
+  width: 70%;
 }
 #video_list .video a {
   text-decoration: none;
   color: #cc0000;
+}
+#comments {
+  margin-bottom: 20px;
+  padding: 10px;
+  color: #cc0000;
+  font-family: Courier, monospace;
+  font-size: 80%;
+  letter-spacing: 0.1em;
+  border: 1px solid #93f7f7;
+  border-top: 0px solid transparent;
+}
+#comments p {
+  margin: 5px 0;
+  background-color: black;
+}
+#slideshow {
+  height: 600px;
+  border: 1px solid #93f7f7;
+  margin-top: -1px;
 }

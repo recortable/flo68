@@ -13,7 +13,6 @@ no.body.acciones {
 
 #background {
     width: 960px;
-    height: 2000px;
     margin: 20px auto;
     background-repeat: repeat-y;
 }
@@ -57,6 +56,11 @@ body.tutorial #logo {background-image: url('/images/pieces/logo_tutorial.png');}
     border-bottom: 0px;
 }
 
+body.intro #banner {background-image: url('/images/pieces/banner_intro.png');}
+body.acciones #banner {background-image: url('/images/pieces/banner_acciones.png');}
+body.tutorial #banner {background-image: url('/images/pieces/banner_tutorial.png');}
+
+
 #menu {
     width: 870px;
     height: 35px;
@@ -99,15 +103,20 @@ body.tutorial #logo {background-image: url('/images/pieces/logo_tutorial.png');}
 #content {width: 438px; float: left;}
 #content_top {width: 437px; height: 9px; border-left: 1px solid @verde; border-bottom: 1px solid @verde;}
 
-#side {width: 434px; float: left;}
+#side {width: 434px; float: left; margin-left: -1px;}
 #viewer {width: 434px; height: 362px; background: url('/images/pieces/viewer1.gif') no-repeat; overflow: hidden;}
 #video {margin-left: 6px; margin-top: 36px; width: 427px; height: 319px; background-color: black;}
 #comments-head {width: 433px; height: 28px; border-left: 1px solid @verde;
                 background: url('/images/pieces/comentarios.png') no-repeat;}
 
-#video_list {margin: 10px 0; color: @verde; .monospace;}
-#video_list .video {width: 100%; overflow: hidden; margin-top: -1px; border: 1px solid @verde; }
+#video_list {margin: 10px 0 0 0; color: @verde; .monospace;}
+#video_list .video {width: 436px; overflow: hidden; margin-top: -1px; border: 1px solid @verde; }
 #video_list .preview {float: left; width: 100px; height: 75px; overflow: hidden;}
 #video_list .video label {display: block; margin: 30px 0 0 120px;}
-#video_list .video p {display: block; margin: 10px 0 0 120px;}
+#video_list .video p {display: block; margin: 10px 0 0 120px; background-color: black; width: 70%;}
 #video_list .video a {text-decoration: none; color: @rojo; }
+
+#comments {margin-bottom: 20px; padding: 10px; color: @rojo; .monospace; border: 1px solid @verde; border-top: 0px solid transparent;}
+#comments p {margin: 5px 0; background-color: black;}
+
+#slideshow {height: 600px; border: 1px solid @verde; margin-top: -1px;}

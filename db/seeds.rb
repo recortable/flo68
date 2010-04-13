@@ -1,12 +1,16 @@
+# coding: utf-8
+require 'faker'
 
 class Seed
   def initialize
     @data = RAILS_ROOT + '/db/data/'
     intro = create_section('intro')
     add_videos(intro, ['actuación de LA BRUJA', 'actuación del MONO', 'mis cosillas'])
+    add_comments(intro)
     acciones = create_section('acciones')
     add_videos(acciones, ['actuación de LA BRUJA', 'actuación del TIPO DE INTERÉS', 'actuación de LA NIÑA NINJA',
         'actuación del VARGA', 'actuación de LA BRUJA', 'actuación del TIPO DE INTERÉS', 'actuación de LA BRUJA', 'actuación del TIPO DE INTERÉS' ])
+    add_comments(acciones)
     create_section('tutorial')
     create_section('faq')
   end
@@ -28,6 +32,12 @@ class Seed
       video.preview = File.new("#{@data}#{path}")
       video.preview.reprocess!
       puts video.save ? "Video #{name} saved!" : "Problem saving video #{name}"
+    end
+  end
+
+  def add_comments(section)
+    1.upto(rand(20) + 30) do
+      Comment.create!(:section_id => section.id, :body => Faker::Lorem.sentence(rand(15) + 1))
     end
   end
 end

@@ -1,0 +1,9 @@
+<% title t('.title', :section => @section.name.camelize) %>
+
+<ul class="properties">
+  <li class="actions"><%= link_to t('app.edit'), '#' %></li>
+  <li><label>Nombre: </label><%= @section.name %></li>
+  <li><label>Título: </label><%= @section.title %></li>
+  <li><label>Video: </label><%= @section.video %></li>
+  <li><label>Texto: </label><%= @section.body %></li>
+</ul>

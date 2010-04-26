@@ -1,0 +1,24 @@
+<% title t('.title', :section => @section.name.camelize)  %>
+
+<table>
+  <thead>
+    <tr>
+      <td>Email</td>
+      <td>Texto</td>
+      <td>Posición</td>
+      <td>Fecha</td>
+      <td />
+    </tr>
+  </thead>
+  <tbody>
+  <% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.email %></td>
+    <td><%= truncate comment.body %></td>
+    <td><%= comment.position %></td>
+    <td><%= comment.updated_at.fecha %></td>
+    <td><%= link_to t('app.edit'), edit_section_comment_path(@section, comment) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

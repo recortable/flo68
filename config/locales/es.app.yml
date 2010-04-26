@@ -1,0 +1,20 @@
+
+es:
+  app:
+    disable_with: "Un momento por favor..."
+    edit: "Modificar"
+    delete: "Borrar"
+
+  sections:
+    index:
+      title: "Estás en la zona de administración de Flo6x8"
+    show:
+      title: "Sección '{{section}}'"
+
+  videos:
+    index:
+      title: "Vídeos en '{{section}}'"
+
+  comments:
+    index:
+      title: "Comentarios a '{{section}}'"

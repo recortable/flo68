@@ -1,0 +1,23 @@
+<% title t('.title', :section => @section.name)  %>
+
+<table>
+  <thead>
+    <tr>
+      <td>Imágen</td>
+      <td>Título</td>
+      <td>Enlace</td>
+      <td>Tipo</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% @videos.each do |video| %>
+  <tr>
+    <td><%= image_tag video.preview.url %></td>
+    <td><%= video.title %></td>
+    <td><%= video.url %></td>
+    <td><%= video.generator %></td>
+    <td><%= link_to t('app.edit'), edit_section_video_path(@section, video) %></td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

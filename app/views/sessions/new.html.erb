@@ -1,0 +1,18 @@
+<h2>Entrar</h2>
+
+<% form_for resource_name, resource, :url => session_path(resource_name) do |f| -%>
+  <fieldset>
+    <li><label><%= f.label :email %></label><%= f.text_field :email %></li>
+    <li><label><%= f.label :password %></label><%= f.password_field :password %></li>
+    <% if devise_mapping.rememberable? -%>
+      <li class="check_boxes">
+        <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
+      </li>
+      <li class="commit">
+        <%= f.submit "Entrar" %>
+      </li>
+    <% end -%>
+  </fieldset>
+<% end -%>
+
+<%= render :partial => "shared/devise_links" %>

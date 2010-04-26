@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+  map.devise_for :users, :as => 'usuarios', :path_names => { :sign_in => 'entrar', :sign_out => 'salir',
+    :sign_up => 'registrarse', :password => 'secreto', :confirmation => 'verificar', :unlock => 'desbloquear' }
+
   map.root :controller => 'pages', :action => 'index'
 
   # FIXME

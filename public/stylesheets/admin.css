@@ -76,11 +76,16 @@ a {
 }
 a:hover { text-decoration: underline; }
 h1, h2, h3, h4 { font-family: Georgia, Cambria, Times, serif; }
+h2 {
+  font-size: 150%;
+  margin-bottom: 20px;
+}
 #user {
   text-align: right;
   width: 1000px;
   margin: 30px auto 3px auto;
 }
+#user a { color: gray; }
 #legal {
   clear: both;
   margin-top: 3px;
@@ -205,3 +210,7 @@ table {
 td { padding: 3px 3px; }
 thead tr { font-weight: bold; }
 tbody tr { border-top: 1px solid #e1e4e4; }
+.info p {
+  font-size: 120%;
+  margin: 0.5em 0;
+}

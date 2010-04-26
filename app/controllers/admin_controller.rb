@@ -1,7 +1,7 @@
 
 class AdminController < ApplicationController
   layout 'admin'
-  before_filter :load_sections
+  before_filter :authenticate_user!, :load_sections
 
   private
   def load_sections

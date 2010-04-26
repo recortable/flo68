@@ -2,29 +2,13 @@
 es:
   activerecord:
     models:
-      account: "cuenta"
-      tag: "tag"
-      movement: "movimiento"
+      user: "Usuario"
     attributes:
-      account:
-        number: "Número de cuenta"
-        entity_code: "Número de entidad"
-        office_code: "Número de oficina"
-        control_code: "Número de control"
-        name: "Nombre de la cuenta"
-        address: "Dirección"
-        owner: "Titular"
-        owner_address: "Dirección del titular"
-        bic: "BIC"
-        iban: "IBAN"
-      tag:
-        name: "Nombre"
-        color: "Color"
-      movement:
-        tags: "Etiquetas"
+      user:
+        email: "Santo"
+        password: "Seña"
 
   formtastic:
     actions:
       create: "Crear {{model}}"
       update: "Guardar {{model}}"
-      dummie: "Launch!"

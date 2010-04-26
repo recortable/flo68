@@ -28,7 +28,7 @@
         <div id="sitebar">
           <ul>
             <% @sections.each do |section| %>
-              <li class="top"><%= link_to section.name.camelize, section_path(section) %></li>
+              <li class="top"><%= link_to section.title, section_path(section) %></li>
               <li><%= link_to 'Videos', section_videos_path(section) %></li>
               <li><%= link_to 'Comentarios', section_comments_path(section) %></li>
               <li><%= link_to 'Ver en la web', view_section_path(section) %></li>

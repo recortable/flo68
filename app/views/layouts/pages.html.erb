@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <title>FLO6x8 - <%= yield :title %></title>
+    <title>FLO6x8 - <%= @section.title %> </title>
     <!-- link rel="icon" href="images/e3e.ico" type="image/x-icon" / -->
     <%= stylesheet_link_tag 'flo_public' %>
     <% if RAILS_ENV == 'production' %>
@@ -10,6 +10,14 @@
     <% else %>
       <%= javascript_include_tag 'jquery.min.js' %>
     <% end %>
+    <%= javascript_include_tag 'flo.video.js' %>
+    <%= yield :head %>
+    <script type="text/javascript">
+      $(function() {
+        $("#video").vimeo({url: '<%= @section.video %>', width: 426, height: 319});
+      });
+    </script>
+
   </head>
   <body class="<%= @section.name %>">
     <div id="background" class="<%= @section.name %>">

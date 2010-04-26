@@ -10,6 +10,8 @@ es:
       title: "Estás en la zona de administración de Flo6x8"
     show:
       title: "Sección '{{section}}'"
+    edit:
+      title: "Modificando sección '{{section}}'"
 
   videos:
     index:

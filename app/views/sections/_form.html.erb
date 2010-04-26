@@ -1,9 +1,10 @@
 
-<% semantic_form_for([@section,@comment]) do |form|  %>
+
+<% semantic_form_for(@section) do |form|  %>
   <% form.inputs do %>
-    <%= form.input :position %>
-    <%= form.input :email %>
-    <%= form.input :body, :as => :text %>
+    <%= form.input :title %>
+    <%= form.input :body %>
+    <%= form.input :video %>
   <% end %>
   <% form.buttons do %>
     <%= form.commit_button %>

@@ -3,10 +3,21 @@ es:
   activerecord:
     models:
       user: "Usuario"
+      comment: "comentario"
+      video: "video"
     attributes:
       user:
         email: "Santo"
         password: "Seña"
+      comment:
+        email: "Email"
+        position: "Posición"
+        body: "Lo que viene a ser el comentario"
+      video:
+        title: "El título"
+        url: "La dirección"
+        generator: "Origen"
+        preview: "Imágen"
 
   formtastic:
     actions:

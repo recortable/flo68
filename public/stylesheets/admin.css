@@ -146,14 +146,16 @@ h2 {
   margin-bottom: 5px;
 }
 div.actions {
-  margin-bottom: 5px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 2em;
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
-  font-size: 80%;
 }
 div.actions a {
   color: gray;
   margin-right: 1em;
 }
+div.actions a:hover { color: black; }
 ul.properties {
   border: 1px solid #f0f0f0;
   padding: 10px;
@@ -178,7 +180,7 @@ form.import textarea {
 fieldset li {
   width: 100%;
   overflow: hidden;
-  margin: 3px 0;
+  margin: 10px 0;
 }
 fieldset li label {
   width: 10em;
@@ -190,10 +192,6 @@ input[type=text], input[type=password] {
   padding: 2px;
   border: 1px solid #e1e4e4;
 }
-fieldset li.commit {
-  margin-top: 10px;
-  margin-left: 11em;
-}
 fieldset li.check_boxes ol {
   display: block;
   clear: both;
@@ -201,7 +199,19 @@ fieldset li.check_boxes ol {
   overflow: hidden;
 }
 fieldset li.check_boxes li { display: block; }
-#colorpicker { margin-left: 11em; }
+fieldset.buttons ol li.commit {
+  float: left;
+  margin-top: 10px;
+  margin-left: 11em;
+  width: auto;
+}
+fieldset.buttons ol a {
+  display: block;
+  float: left;
+  margin-left: 0.5em;
+  margin-top: 0.8em;
+  color: gray;
+}
 table {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   width: 100%;
@@ -210,7 +220,18 @@ table {
 td { padding: 3px 3px; }
 thead tr { font-weight: bold; }
 tbody tr { border-top: 1px solid #e1e4e4; }
+td a {
+  color: gray;
+  font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
+  font-size: 80%;
+}
+td a:hover { color: black; }
 .info p {
   font-size: 120%;
   margin: 0.5em 0;
 }
+form .attachment {
+  margin: 0.5em 0 0.5em 11em;
+  font-style: italic;
+}
+form .attachment p { margin: 5px 0; }

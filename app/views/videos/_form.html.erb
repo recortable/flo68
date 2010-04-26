@@ -1,0 +1,21 @@
+
+<% semantic_form_for([@section,@video], :html => {:multipart => true}) do |form|  %>
+  <% form.inputs do %>
+    <%= form.input :title%>
+    <%= form.input :url %>
+    <%= form.input :generator, :as => 'select', :collection => ['vimeo'], :include_blank => false %>
+    <%= form.input :preview, :as => :file %>
+    <div class="attachment">
+      <% if @video.preview? %>
+        <p>Actualmente la imágen es:</p>
+        <%= image_tag @video.preview.url %>
+        <p>Para modificarla, sube otra.</p>
+      <% end %>
+      <p>Las imágenes de previsualización de vídeo deben tener un tamaño exacto de 100x75 pixels</p>
+    </div>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+    <%= link_to 'Cancelar', section_videos_path(@section) %>
+  <% end %>
+<% end %>

@@ -14,7 +14,13 @@ es:
   videos:
     index:
       title: "Vídeos en '{{section}}'"
+    edit:
+      title: "Editando vídeo '{{video}}' en '{{section}}'"
+    new:
+      title: "Añadir un vídeo a '{{section}}'"
 
   comments:
     index:
       title: "Comentarios a '{{section}}'"
+    edit:
+      title: "Modificar un comentario"

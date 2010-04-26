@@ -1,5 +1,8 @@
 <% title t('.title', :section => @section.name)  %>
 
+<div class="actions">
+  <%= link_to 'Añadir un vídeo a esta sección', new_section_video_path(@section) %>
+</div>
 <table>
   <thead>
     <tr>

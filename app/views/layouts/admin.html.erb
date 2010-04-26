@@ -15,10 +15,13 @@
   </head>
   <body>
     <div id="user">
-    <%= current_user.email %>  <%= link_to "Salir", destroy_user_session_path %>
+      <%= current_user.email %>  <%= link_to "Salir", destroy_user_session_path %>
     </div>
     <div id="page">
       <div id="top">
+        <% if flash[:notice] %>
+          <div class="flash"><%= flash[:notice] %></div>
+        <% end %>
         <h1><%= yield :title %></h1>
       </div>
       <div class="container">

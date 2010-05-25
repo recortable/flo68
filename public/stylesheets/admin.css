@@ -131,11 +131,10 @@ h2 {
   text-decoration: none;
   background-color: #f0f0f0;
 }
-#content { margin-left: 160px; }
+#content { margin-left: 170px; }
 #top {
   font-family: Georgia, Cambria, Times, serif;
-  margin-left: 160px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 #top h1 {
   font-size: 200%;

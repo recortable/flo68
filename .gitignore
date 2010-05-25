@@ -1,4 +1,5 @@
 public/system/previews
+public/system/**
 log/*
 tmp/*
 config/database.yml

@@ -12,7 +12,7 @@
 ActiveRecord::Schema.define(:version => 20100426111206) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "section_id"
+    t.integer  "video_id"
     t.string   "body"
     t.string   "email"
     t.integer  "position"
@@ -58,11 +58,16 @@ ActiveRecord::Schema.define(:version => 20100426111206) do
     t.integer  "section_id"
     t.string   "title"
     t.string   "url"
-    t.string   "generator",            :default => "vimeo"
+    t.string   "generator",              :default => "vimeo"
+    t.string   "animation_file_name"
+    t.string   "animation_content_type"
+    t.integer  "animation_file_size"
+    t.datetime "animation_updated_at"
     t.string   "preview_file_name"
     t.string   "preview_content_type"
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
+    t.integer  "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

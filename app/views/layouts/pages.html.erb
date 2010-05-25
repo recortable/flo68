@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
-    <title>FLO6x8 - <%= @section.title %> </title>
-    <!-- link rel="icon" href="images/e3e.ico" type="image/x-icon" / -->
+    <title>FLO6x8 &#9733 <%= @section.title %> </title>
+    <link rel="icon" href="/flo.ico" type="image/x-icon" />
     <%= stylesheet_link_tag 'flo_public' %>
     <% if RAILS_ENV == 'production' %>
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
@@ -33,19 +33,7 @@
           <li><%= section('faq') %></li>
         </ul>
         <div id="main">
-          <div id="content">
-            <div id="content_top">&nbsp;</div>
-            <%= yield %>
-          </div>
-          <div id="side">
-            <div id="viewer">
-              <div id="video"></div>
-            </div>
-            <div id="comments-head">&nbsp;</div>
-            <div id="comments">
-              <%= yield :comments %>
-            </div>
-          </div>
+          <%= yield %>
         </div>
       </div>
     </div>

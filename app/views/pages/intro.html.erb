@@ -1,7 +1,15 @@
 
-
-<%= image_tag('elements/imagen_intro.png') %>
-
-<%= render 'videos', :object => @section.videos %>
-
-<%= render 'comments', :object => @section.comments %>
+<div id="content">
+  <div id="content_top">&nbsp;</div>
+  <%= image_tag('elements/imagen_intro.png') %>
+  <%= render 'videos', :object => @section.videos %>
+</div>
+<div id="side">
+  <div id="viewer">
+    <div id="video"></div>
+  </div>
+  <div id="comments-head">&nbsp;</div>
+  <div id="comments">
+    <%= render 'comments', :object => @section.comments %>
+  </div>
+</div>

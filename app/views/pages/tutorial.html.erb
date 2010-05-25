@@ -1,3 +1,14 @@
+
+<% content_for :head do %>
+  <script type="text/javascript">
+    $(function() {
+      $("#planos .video").vimeo({url: 'http://vimeo.com/6631139', width: 426, height: 319});
+      $("#ensayos .video").vimeo({url: 'http://vimeo.com/6631139', width: 426, height: 319});
+      $("#elpalo .video").vimeo({url: 'http://vimeo.com/6631139', width: 426, height: 319});
+    });
+  </script>
+<% end %>
+
 <div id="content">
   <div id="content_top">&nbsp;</div>
   <%= image_tag 'pieces/imagen_tutorial.png' %>

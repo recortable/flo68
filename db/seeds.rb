@@ -3,6 +3,12 @@ require 'faker'
 $KCODE = "U"
 require "active_support"
 
+def list_entries(path)
+  entries = []
+  Dir.chdir(path) { entries = Dir["**"] }
+  entries.sort
+end
+
 class Seeder
   def seed
     @data = RAILS_ROOT + '/db/data'
@@ -23,7 +29,7 @@ class Seeder
   def create_videos(section)
     folder = "#{@data}/videos/#{section.name}"
     puts "Loading videos from: #{folder}"
-    load_entries(folder).each do |entry|
+    list_entries(folder).each do |entry|
       name = entry.gsub(/[-_]/, ' ')
       name.gsub!(/\.\w\w\w$/, '')
       puts "Video: #{name} (#{entry})"
@@ -52,16 +58,12 @@ class Seeder
     end
   end
 
-  def load_entries(path)
-    entries = []
-    Dir.chdir(path) { entries = Dir["**"] }
-    entries.sort
-  end
+
 
   def create_section(name)
     path = "#{@data}/#{name}.html"
     s = Section.new(:name => name, :title => name)
-    File.open(path, "r") {|f| s.body = f.readlines.join}
+    File.open(path, "r") {|f| s.body = f.readlines.join} if File.exist?(path)
     puts s.save ? "Section #{name} saved!" : "Problem saving section #{name}"
     s
   end
@@ -75,6 +77,7 @@ end
 
 class Commenteer
   def import
+    puts "COMENTEER"
     Video.all.each {|video| puts "'#{video.title}'"}
     data = RAILS_ROOT + '/db/data/comentarios.txt'
     File.readlines(data).each do |line|
@@ -100,6 +103,25 @@ class Commenteer
 
 end
 
+class Carteleria
+  def seed
+    puts "CARTELERIA"
+    path = RAILS_ROOT + '/db/data/carteles'
+    list_entries(path).each do |entry|
+      name = entry.gsub(/[-_]/, ' ')[0..-5]
+      name[0] = name[0,1].upcase
+      puts "Cartel: #{name}"
+      filename = File.join(path, entry)
+      cartel = Cartel.new(:title => name)
+      cartel.image = File.new(filename)
+      cartel.save!
+      cartel.image.reprocess!
+      cartel.save!
+    end
+  end
+end
+
 Seeder.new.seed if Section.count == 0
-Commenteer.new.import
+Carteleria.new.seed if Cartel.count == 0
+#Commenteer.new.import if Comment.count == 0
 

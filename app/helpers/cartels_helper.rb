@@ -1,0 +1,2 @@
+module CartelsHelper
+end

@@ -23,6 +23,6 @@ es:
 
   comments:
     index:
-      title: "Comentarios a '{{section}}'"
+      title: "Comentarios en '{{section}}'"
     edit:
       title: "Modificar un comentario"

@@ -15,4 +15,5 @@ ActionController::Routing::Routes.draw do |map|
     section.resources :comments, :as => 'comentarios'
   end
   map.admin '/admin', :controller => 'sections', :action => 'index'
+  map.resources :cartels, :as => 'carteles', :path_prefix => 'admin'
 end

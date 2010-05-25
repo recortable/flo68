@@ -1,4 +1,20 @@
 
+<% content_for :head do -%>
+  <script type="text/javascript">
+    $(function() {
+      $("#main_video").vimeo({url: '<%= @video.url %>', width: 426, height: 319});
+
+      var carteles = [];
+  <% Cartel.all.each do |cartel| %>
+        carteles.push({title : '<%= cartel.title %>', url : '<%= cartel.image.url %>',
+          width : <%= cartel.width %> , height : <%= cartel.height %>});
+  <% end %>
+      $("#slideshow").slide(carteles);
+    });
+  </script>
+<% end -%>
+
+
 <div id="content">
   <div id="content_top">&nbsp;</div>
   <div id="slideshow">
@@ -7,7 +23,7 @@
 </div>
 <div id="side">
   <div id="viewer">
-    <div id="video"></div>
+    <div id="main_video" class="video"></div>
   </div>
   <div id="comments-head">&nbsp;</div>
   <div id="comments">

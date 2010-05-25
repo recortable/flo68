@@ -7,6 +7,7 @@
   <thead>
     <tr>
       <td>Imágen</td>
+      <td>Animación</td>
       <td>Título</td>
       <td>Enlace</td>
       <td>Tipo</td>
@@ -16,6 +17,7 @@
   <% @videos.each do |video| %>
   <tr>
     <td><%= image_tag video.preview.url %></td>
+    <td><%= image_tag video.animation.url %></td>
     <td><%= video.title %></td>
     <td><%= video.url %></td>
     <td><%= video.generator %></td>

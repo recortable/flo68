@@ -220,6 +220,13 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   border: 1px solid #93f7f7;
   margin-top: -1px;
 }
+#slideshow .slide_controls {
+  text-align: center;
+  font-family: Courier, monospace;
+  font-size: 80%;
+  letter-spacing: 0.1em;
+  color: #93f7f7;
+}
 #planos {
   margin-top: -1px;
   width: 434px;
@@ -238,6 +245,23 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   height: 408px;
   background: url('/images/pieces/elpalo.gif') no-repeat;
   overflow: hidden;
+}
+#side .video {
+  width: 436px;
+  height: 319px;
+  overflow: hidden;
+}
+#planos .video {
+  margin-top: 36px;
+  margin-left: 7px;
+}
+#ensayos .video {
+  margin-top: 34px;
+  margin-left: 7px;
+}
+#elpalo .video {
+  margin-top: 34px;
+  margin-left: 7px;
 }
 #faq_head {
   width: 442px;

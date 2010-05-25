@@ -22,21 +22,23 @@
       <div class="container">
         <div id="sitebar">
           <%= image_tag 'pieces/logo_intro.png', :id => 'admin_logo' %>
+          <br/><br/>
           <ul>
-            <% @sections.each do |section| %>
-              <li class="top"><%= link_to section.title, section_path(section) %></li>
-              <li><%= link_to 'Videos', section_videos_path(section) %></li>
-              <li><%= link_to 'Comentarios', section_comments_path(section) %></li>
-              <li><%= link_to 'Ver en la web', view_section_path(section) %></li>
-            <% end %>
+            <li class="top">Intro</li>
+            <li><%= link_to 'Vídeos', section_videos_path(:section_id => 1) %></li>
+            <li><%= link_to 'Comentarios', section_comments_path(:section_id => 1) %></li>
+            <li class="top">Acciones</li>
+            <li><%= link_to 'Vídeos', section_videos_path(:section_id => 2) %></li>
+            <li><%= link_to 'Comentarios', section_comments_path(:section_id => 2) %></li>
+            <li><%= link_to 'Carteles', cartels_path %></li>
           </ul>
         </div>
         <div id="content">
           <div id="top">
-          <% if flash[:notice] %>
-            <div class="flash"><%= flash[:notice] %></div>
-          <% end %>
-          <h1><%= yield :title %></h1>
+            <% if flash[:notice] %>
+              <div class="flash"><%= flash[:notice] %></div>
+            <% end %>
+            <h1><%= yield :title %></h1>
           </div>
           <%= yield %>
         </div>

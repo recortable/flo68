@@ -1,5 +1,62 @@
 (function($) {
 
+    $.fn.slide = function(list, settings) {
+        var config = {
+            height: 550,
+            width: 430,
+        };
+
+        if (settings) $.extend(config, settings);
+
+        this.each(function() {
+            var self = $(this);
+            var container = $("<div class='slide_container'>");
+            container.css('overflow', 'hidden');
+            container.css('width', config.width);
+            container.css('height', config.height);
+            var images = [];
+            $.each(list, function() {
+                var image = $('<img src="' + this.url + '" width="' + this.width +
+                    '" height="'+ this.height + '" alt="' + this.title + '" style="display: none" />');
+                image.css('margin-left', (config.width - this.width) / 2);
+                image.css('margin-top', (config.height - this.height) / 2);
+                images.push(image);
+                container.append(image);
+            });
+            self.append(container);
+
+            var current_image = 1;
+            var image_count = list.length;
+            var controls = $("<div class='slide_controls'>");
+
+            $("<a>&lt;</a>").click(function() {
+                if (current_image > 1) {
+                    images[current_image - 1].fadeOut(100, function() {
+                        current_image--;
+                        self.find('.current_image').html(current_image);
+                        images[current_image - 1].show();
+                    });
+                }
+                return false;
+            }).css('cursor', 'pointer').appendTo(controls);
+            $("&nbsp; <span class='current_image'>1</span> de <span>" + image_count + "</span> &nbsp;").appendTo(controls);
+            $("<a>&gt;</a>").click(function() {
+                if (current_image < image_count) {
+                    images[current_image - 1].fadeOut(100, function() {
+                        current_image++;
+                        self.find('.current_image').html(current_image);
+                        images[current_image - 1].show();
+                    });
+                }
+                return false;
+            }).css('cursor', 'pointer').appendTo(controls);
+            self.append(controls);
+
+            images[current_image - 1].fadeIn();
+        });
+        return this;
+    }
+
     $.fn.vimeo = function(settings) {
         var config = {
             height: 319,

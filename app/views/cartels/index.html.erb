@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <td>Miniatura</td><td>Título</td><td>Posición</td><td>Tamaño</td><td>&nbsp;</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cartels.each do |cartel| %>
+    <tr>
+      <td><%= link_to( image_tag(cartel.image.url(:thumb)), cartel.image.url )  %></td>
+      <td><%= cartel.title %></td>
+      <td><%= cartel.position %></td>
+      <td><%= number_to_human_size(cartel.image.size) %>
+        <%= cartel.image.content_type %><br/>
+        (<%= cartel.width %> x <%= cartel.height %> px)</td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

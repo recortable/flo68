@@ -12,11 +12,6 @@
     <% end %>
     <%= javascript_include_tag 'flo.video.js' %>
     <%= yield :head %>
-    <script type="text/javascript">
-      $(function() {
-        $("#video").vimeo({url: '<%= @section.video %>', width: 426, height: 319});
-      });
-    </script>
 
   </head>
   <body class="<%= @section.name %>">

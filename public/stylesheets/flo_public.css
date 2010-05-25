@@ -80,6 +80,7 @@ no.body.acciones { background-color: #1f1f1f; }
 body.intro #logo { background-image: url('/images/pieces/logo_intro.png'); }
 body.acciones #logo { background-image: url('/images/pieces/logo_acciones.png'); }
 body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png'); }
+body.faq #logo { background-image: url('/images/pieces/logo_faq.png'); }
 #banner {
   width: 727px;
   height: 144px;
@@ -90,6 +91,7 @@ body.tutorial #logo { background-image: url('/images/pieces/logo_tutorial.png');
 body.intro #banner { background-image: url('/images/pieces/banner_intro.png'); }
 body.acciones #banner { background-image: url('/images/pieces/banner_acciones.png'); }
 body.tutorial #banner { background-image: url('/images/pieces/banner_tutorial.png'); }
+body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 #menu {
   width: 870px;
   height: 35px;
@@ -123,6 +125,7 @@ body.tutorial #banner { background-image: url('/images/pieces/banner_tutorial.pn
 #menu .faq {
   width: 39px;
   border-right: 0px;
+  background-position: 4px 0px;
 }
 #menu a.faq { background-image: url('/images/pieces/faq_off.png'); }
 #menu span.faq { background-image: url('/images/pieces/faq_on.png'); }
@@ -146,12 +149,13 @@ body.tutorial #banner { background-image: url('/images/pieces/banner_tutorial.pn
   margin-left: -1px;
 }
 #viewer {
+  margin-top: -1px;
   width: 434px;
   height: 362px;
   background: url('/images/pieces/viewer1.gif') no-repeat;
   overflow: hidden;
 }
-#video {
+#viewer .video {
   margin-left: 6px;
   margin-top: 36px;
   width: 427px;
@@ -215,4 +219,30 @@ body.tutorial #banner { background-image: url('/images/pieces/banner_tutorial.pn
   height: 600px;
   border: 1px solid #93f7f7;
   margin-top: -1px;
+}
+#planos {
+  margin-top: -1px;
+  width: 434px;
+  height: 407px;
+  background: url('/images/pieces/planos.gif') no-repeat;
+  overflow: hidden;
+}
+#ensayos {
+  width: 434px;
+  height: 408px;
+  background: url('/images/pieces/ensayos.gif') no-repeat;
+  overflow: hidden;
+}
+#elpalo {
+  width: 434px;
+  height: 408px;
+  background: url('/images/pieces/elpalo.gif') no-repeat;
+  overflow: hidden;
+}
+#faq_head {
+  width: 442px;
+  height: 60px;
+  margin-top: -1px;
+  background: url('/images/pieces/faq_head.png') no-repeat;
+  overflow: hidden;
 }

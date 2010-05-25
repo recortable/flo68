@@ -3,9 +3,11 @@
 <table>
   <thead>
     <tr>
+      <td>&nbsp;</td>
+      <td>Video</td>
+      <td>Author</td>
       <td>Email</td>
       <td>Texto</td>
-      <td>Posición</td>
       <td>Fecha</td>
       <td />
     </tr>
@@ -13,9 +15,11 @@
   <tbody>
   <% @comments.each do |comment| %>
   <tr>
+    <td><%= image_tag comment.video.preview.url %></td>
+    <td><%= comment.video.title %></td>
+    <td><%= comment.author %></td>
     <td><%= comment.email %></td>
     <td><%= truncate comment.body %></td>
-    <td><%= comment.position %></td>
     <td><%= comment.updated_at.fecha %></td>
     <td><%= link_to t('app.edit'), edit_section_comment_path(@section, comment) %></td>
   </tr>

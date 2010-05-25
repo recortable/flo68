@@ -61,7 +61,7 @@ class Seeder
 
 
   def create_section(name)
-    path = "#{@data}/#{name}.html"
+    path = "#{@data}/#{name}.txt"
     s = Section.new(:name => name, :title => name)
     File.open(path, "r") {|f| s.body = f.readlines.join} if File.exist?(path)
     puts s.save ? "Section #{name} saved!" : "Problem saving section #{name}"
@@ -78,7 +78,6 @@ end
 class Commenteer
   def import
     puts "COMENTEER"
-    Video.all.each {|video| puts "'#{video.title}'"}
     data = RAILS_ROOT + '/db/data/comentarios.txt'
     File.readlines(data).each do |line|
       if line =~ /^\s*$/
@@ -86,10 +85,40 @@ class Commenteer
       elsif line =~ /^\s*\*\*\*(.*)$/
         set_video($1)
       elsif line =~ /^(.+)\|(.*)$/
-        #puts "Comentario: #{$1} #{$2}"
+        open_comment($1, $2)
       else
-        #puts line
+        add_line(line)
       end
+    end
+    save_comment
+  end
+
+  def add_line(line)
+    if @comment
+      @comment.body = @comment.body + ' ' +  line
+    end
+  end
+
+  def open_comment(user, fecha)
+    if @video
+      save_comment
+      user.strip!
+      fecha.strip!.gsub!(/\s/, '')
+      year = fecha[6..9]
+      month = fecha[3..4]
+      day = fecha[0..1]
+      date = Date.civil(year.to_i, month.to_i, day.to_i)
+      @comment = Comment.new(:video_id => @video.id, :author => user, :created_at => date, :body => '')
+      puts "Comentario: #{user} #{fecha} #{day}/#{month}/#{year} "
+    end
+  end
+
+  def save_comment
+    if @comment
+      puts "Guardando comentario: #{@comment.author} #{@comment.created_at.fecha}"
+      puts "#{@comment.body}"
+      @comment.save!
+      @comment = nil
     end
   end
 
@@ -97,7 +126,9 @@ class Commenteer
     name = name.strip.chars.downcase
     @video = Video.find_by_title(name)
     if @video.nil?
-      puts "FALTA: #{name.downcase}"
+      puts "*** FALTA: #{name.downcase}"
+    else
+      puts "Vídeo actual: #{@video.title}"
     end
   end
 
@@ -123,5 +154,6 @@ end
 
 Seeder.new.seed if Section.count == 0
 Carteleria.new.seed if Cartel.count == 0
-#Commenteer.new.import if Comment.count == 0
+Comment.destroy_all
+Commenteer.new.import if Comment.count == 0
 

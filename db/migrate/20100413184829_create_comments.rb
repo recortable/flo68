@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration
       t.references :video
       t.string :body, :length => 1024
       t.string :email
-      t.integer :position
+      t.string :author
       t.timestamps
     end
   end

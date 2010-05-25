@@ -211,8 +211,12 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   border: 1px solid #93f7f7;
   border-top: 0px solid transparent;
 }
-#comments p {
-  margin: 5px 0;
+#comments p.head {
+  background-color: black;
+  color: #93f7f7;
+}
+#comments p.body {
+  margin-bottom: 10px;
   background-color: black;
 }
 #slideshow {

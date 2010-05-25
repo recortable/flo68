@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
     t.integer  "video_id"
     t.string   "body"
     t.string   "email"
-    t.integer  "position"
+    t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

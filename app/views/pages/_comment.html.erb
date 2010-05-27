@@ -1,0 +1,16 @@
+<% form_for(@comment, :url => add_comment_path) do |form| %>
+  <%= form.hidden_field :video_id %>
+  <p>
+    <%= form.label :author, 'Nombre, imprescindible' %>
+    <%= form.text_field :author, :autocomplete => 'off' %>
+  </p>
+  <p>
+    <%= form.label :email, 'Email, no aparecerá publicado' %>
+    <%= form.text_field :email, :autocomplete =>'off' %>
+  </p>
+  <p>
+    <%= form.label :body, 'Deja aquí tu comentario' %>
+    <%= form.text_area :body, :autocomplete => 'off' %>
+  </p>
+  <%= form.submit 'Enviar' %>
+<% end %>

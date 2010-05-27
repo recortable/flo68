@@ -29,7 +29,7 @@
             var image_count = list.length;
             var controls = $("<div class='slide_controls'>");
 
-            $("<a>&lt;</a>").click(function() {
+            $("<a>&lt;&nbsp;</a>").click(function() {
                 if (current_image > 1) {
                     images[current_image - 1].fadeOut(100, function() {
                         current_image--;
@@ -39,8 +39,8 @@
                 }
                 return false;
             }).css('cursor', 'pointer').appendTo(controls);
-            $("&nbsp; <span class='current_image'>1</span> de <span>" + image_count + "</span> &nbsp;").appendTo(controls);
-            $("<a>&gt;</a>").click(function() {
+            $(" <span class='current_image'>1</span> de <span>" + image_count + "</span> ").appendTo(controls);
+            $("<a>&nbsp;&gt;</a>").click(function() {
                 if (current_image < image_count) {
                     images[current_image - 1].fadeOut(100, function() {
                         current_image++;
@@ -84,17 +84,12 @@
         code += '&amp;show_byline='+ config.show_byline + '&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="' + config.allow_full_screen + '" allowscriptaccess="always"'
         code += 'width="' + config.width + '" height="' + config.height + '"></embed></object>'
 
-        console.log("id", config.vimeo_id);
-
         if (config.vimeo_id != undefined) {
             this.each(function() {
                 $(this).html(code);
             });
         }
-
-
         return this;
-
     };
 
 })(jQuery);

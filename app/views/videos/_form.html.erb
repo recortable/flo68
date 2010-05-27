@@ -13,6 +13,15 @@
       <% end %>
       <p>Las imágenes de previsualización de vídeo deben tener un tamaño exacto de 100x75 pixels</p>
     </div>
+    <%= form.input :animation, :as => :file %>
+    <div class="attachment">
+      <% if @video.animation? %>
+        <p>Actualmente la imágen es:</p>
+        <%= image_tag @video.animation.url %>
+        <p>Para modificarla, sube otra.</p>
+      <% end %>
+      <p>Las imágenes de previsualización de vídeo deben tener un tamaño exacto de 100x75 pixels</p>
+    </div>
   <% end %>
   <% form.buttons do %>
     <%= form.commit_button %>

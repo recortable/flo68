@@ -2,12 +2,11 @@
 
 <% semantic_form_for(@section) do |form|  %>
   <% form.inputs do %>
-    <%= form.input :title %>
-    <%= form.input :body %>
+    <%= form.input :body, :as => :text %>
     <%= form.input :video %>
   <% end %>
   <% form.buttons do %>
     <%= form.commit_button %>
-    <%= link_to 'Cancelar', section_videos_path(@section) %>
+    <%= link_to 'Cancelar', section_path(@section) %>
   <% end %>
 <% end %>

@@ -69,7 +69,7 @@ h2 {font-size: 150%; margin-bottom: 20px;}
 #top h2 {font-size: 130%;margin-bottom: 5px;}
 
 div.actions {width: 100%; overflow: hidden; margin-bottom: 2em;font-family: @sans; }
-div.actions a {color: @grisoscuro; margin-right: 1em;}
+div.actions a {display: block; float: left; color: @grisoscuro; margin-right: 1em; background-color: @gris; padding: 10px 10px; .rounded;}
 div.actions a:hover {color: black;}
 
 ul.properties {border: 1px solid @grisclaro; padding: 10px; .rounded;}
@@ -95,7 +95,8 @@ table {font-family: @sans; width: 100%; border-bottom: 1px solid @gris; }
 td {padding: 3px 3px;}
 thead tr {font-weight: bold;}
 tbody tr {border-top: 1px solid @gris;}
-td a {color: @grisoscuro;font-family: @sans; font-size: @font-small;}
+td a {color: @grisoscuro;font-family: @sans; }
+td.actions a {float: left; display: block; padding: 3px 5px; margin: 3px; font-size: @font-small; background-color: @gris; .rounded;}
 td a:hover {color: black;}
 
 .info p {font-size: 120%; margin: 0.5em 0; }

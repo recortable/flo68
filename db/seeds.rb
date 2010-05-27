@@ -108,14 +108,14 @@ class Commenteer
       month = fecha[3..4]
       day = fecha[0..1]
       date = Date.civil(year.to_i, month.to_i, day.to_i)
-      @comment = Comment.new(:video_id => @video.id, :author => user, :created_at => date, :body => '')
+      @comment = Comment.new(:video_id => @video.id, :author => user, :published_at => date, :body => '', :email => 'flo')
       puts "Comentario: #{user} #{fecha} #{day}/#{month}/#{year} "
     end
   end
 
   def save_comment
     if @comment
-      puts "Guardando comentario: #{@comment.author} #{@comment.created_at.fecha}"
+      puts "Guardando comentario: #{@comment.author} #{@comment.published_at.fecha}"
       puts "#{@comment.body}"
       @comment.save!
       @comment = nil

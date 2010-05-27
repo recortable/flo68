@@ -1,14 +1,13 @@
 class CommentsController < AdminController
   inherit_resources
-  belongs_to :section
 
-  def index
-    @section = Section.find(params[:section_id])
-    videos = @section.videos
-    @comments = Comment.all(:conditions => {:video_id => videos})
+  actions :all, :except => [:index, :new]
+
+  def destroy
+    destroy! {section_video_video_comments_path(@comment.video.section, @comment.video)}
   end
 
   def update
-    update! { section_comments_path(@section)}
+    update! { section_video_video_comments_path(@comment.video.section, @comment.video)}
   end
 end

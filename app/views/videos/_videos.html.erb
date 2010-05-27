@@ -1,0 +1,29 @@
+
+<table>
+  <thead>
+    <tr>
+      <td>Imágen</td>
+      <td>Animación</td>
+      <td>Posición</td>
+      <td>Título</td>
+      <td>Enlace</td>
+      <td>Tipo</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% videos.each do |video| %>
+      <tr>
+        <td><%= image_tag( video.preview.url ) if video.preview? %></td>
+        <td><%= image_tag( video.animation.url ) if video.animation? %></td>
+        <td><%= video.position %></td>
+        <td><%= link_to video.title, section_video_video_comments_path(video.section, video) %></td>
+        <td><%= video.url %></td>
+        <td><%= video.generator %></td>
+        <td class="actions">
+          <%= link_to 'Modificar vídeo', edit_section_video_path(video.section, video) %>
+          <%= link_to 'Ver comentarios', section_video_video_comments_path(video.section, video) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

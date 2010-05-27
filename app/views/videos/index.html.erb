@@ -3,26 +3,5 @@
 <div class="actions">
   <%= link_to 'Añadir un vídeo a esta sección', new_section_video_path(@section) %>
 </div>
-<table>
-  <thead>
-    <tr>
-      <td>Imágen</td>
-      <td>Animación</td>
-      <td>Título</td>
-      <td>Enlace</td>
-      <td>Tipo</td>
-    </tr>
-  </thead>
-  <tbody>
-  <% @videos.each do |video| %>
-  <tr>
-    <td><%= image_tag video.preview.url %></td>
-    <td><%= image_tag video.animation.url %></td>
-    <td><%= video.title %></td>
-    <td><%= video.url %></td>
-    <td><%= video.generator %></td>
-    <td><%= link_to t('app.edit'), edit_section_video_path(@section, video) %></td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+
+<%= render 'videos', :videos => @videos %>

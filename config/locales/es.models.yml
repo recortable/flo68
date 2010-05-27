@@ -18,6 +18,7 @@ es:
         url: "La dirección"
         generator: "Origen"
         preview: "Imágen"
+        animation: "Imágen animada"
 
   formtastic:
     actions:

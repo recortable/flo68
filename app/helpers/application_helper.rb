@@ -8,4 +8,9 @@ module ApplicationHelper
   def view_section_path(section)
     {:controller => 'pages', :action => 'section', :id => section.name}
   end
+
+  def markup(text)
+    markdown = RDiscount.new(text)
+    markdown.to_html
+  end
 end

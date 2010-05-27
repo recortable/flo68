@@ -21,8 +21,10 @@ es:
     new:
       title: "Añadir un vídeo a '{{section}}'"
 
-  comments:
+  section_comments:
     index:
-      title: "Comentarios en '{{section}}'"
+      title: "Todos los comentarios de la sección '{{section}}'"
+      
+  comments:
     edit:
       title: "Modificar un comentario"

@@ -1,6 +1,8 @@
+
+
 <% comments.each do |comment| %>
   <% div_for comment do %>
-    <p class="head"><%= comment.author %> <span class="date"><%= comment.created_at.fecha %></span></p>
+    <p class="head"><%= comment.author %> <span class="date"><%= comment.published_at.fecha %></span></p>
     <p class="body"><%= comment.body %></p>
   <% end %>
 <% end %>

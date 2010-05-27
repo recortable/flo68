@@ -13,7 +13,7 @@ class CreateVideos < ActiveRecord::Migration
       t.string :preview_content_type
       t.integer :preview_file_size
       t.datetime :preview_updated_at
-      t.integer :position
+      t.string :position
       t.timestamps
     end
   end

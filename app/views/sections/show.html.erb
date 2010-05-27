@@ -1,8 +1,11 @@
 <% title t('.title', :section => @section.name.camelize) %>
 
+<div class="actions">
+  <%= link_to t('app.edit'), edit_section_path(@section) %>
+</div>
+
 <ul class="properties">
-  <li class="actions"><%= link_to t('app.edit'), edit_section_path(@section) %></li>
   <li><label>Nombre: </label><%= @section.title %></li>
   <li><label>Video: </label><%= @section.video %></li>
-  <li><label>Texto: </label><%= @section.body %></li>
+  <li><label>Texto: </label><%= markdown @section.body %></li>
 </ul>

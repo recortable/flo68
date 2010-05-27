@@ -25,12 +25,14 @@
           <br/><br/>
           <ul>
             <li class="top">Intro</li>
-            <li><%= link_to 'Vídeos', section_videos_path(:section_id => 1) %></li>
-            <li><%= link_to 'Comentarios', section_comments_path(:section_id => 1) %></li>
+            <li><%= link_to 'Vídeos', section_videos_path(:section_id => '1-Intro') %></li>
+            <li><%= link_to 'Comentarios', section_section_comments_path(:section_id => '1-Intro') %></li>
             <li class="top">Acciones</li>
-            <li><%= link_to 'Vídeos', section_videos_path(:section_id => 2) %></li>
-            <li><%= link_to 'Comentarios', section_comments_path(:section_id => 2) %></li>
+            <li><%= link_to 'Vídeos', section_videos_path(:section_id => '2-Acciones') %></li>
+            <li><%= link_to 'Comentarios', section_section_comments_path(:section_id => '2-Acciones') %></li>
             <li><%= link_to 'Carteles', cartels_path %></li>
+            <li class="top">FAQ</li>
+            <li><%= link_to 'Texto', edit_section_path(:id => '4-FAQ') %></li>
           </ul>
         </div>
         <div id="content">

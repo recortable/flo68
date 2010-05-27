@@ -52,6 +52,10 @@ del, ins { text-decoration: none; }
   font-size: 80%;
   letter-spacing: 0.1em;
 }
+.button {
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+}
 html { background-color: black; }
 no.body.acciones { background-color: #1f1f1f; }
 #background {
@@ -203,7 +207,6 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 }
 #comments {
   margin-bottom: 20px;
-  padding: 10px;
   color: #cc0000;
   font-family: Courier, monospace;
   font-size: 80%;
@@ -211,13 +214,39 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   border: 1px solid #93f7f7;
   border-top: 0px solid transparent;
 }
+#comments p { margin: 0 10px; }
 #comments p.head {
+  padding: 3px;
   background-color: black;
   color: #93f7f7;
 }
 #comments p.body {
+  padding: 3px;
   margin-bottom: 10px;
   background-color: black;
+}
+#comments form {
+  background-color: black;
+  display: block;
+  margin-bottom: 20px;
+}
+#comments input {
+  padding: 2px;
+  background-color: black;
+  color: #93f7f7;
+  border: 1px solid #93f7f7;
+}
+#comments textarea {
+  padding: 2px;
+  background-color: black;
+  color: #93f7f7;
+  border: 1px solid #93f7f7;
+}
+#comments form p { position: relative; }
+#comments form label {
+  position: absolute;
+  top: 2px;
+  margin-left: 2px;
 }
 #slideshow {
   height: 600px;
@@ -273,4 +302,12 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   margin-top: -1px;
   background: url('/images/pieces/faq_head.png') no-repeat;
   overflow: hidden;
+}
+#faq_body {
+  color: #cc0000;
+  font-family: 'Cantarell', arial, serif;
+}
+#faq_body p {
+  margin-top: 2em;
+  line-height: 1.7em;
 }

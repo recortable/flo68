@@ -10,9 +10,13 @@
     <% else %>
       <%= javascript_include_tag 'jquery.min.js' %>
     <% end %>
-    <%= javascript_include_tag 'flo.video.js' %>
+    <%= javascript_include_tag 'flo.video.js', 'jquery.infieldlabel.min' %>
     <%= yield :head %>
-
+    <script type="text/javascript">
+        $(function() {
+          $("label").inFieldLabels();
+        })
+    </script>
   </head>
   <body class="<%= @section.name %>">
     <div id="background" class="<%= @section.name %>">

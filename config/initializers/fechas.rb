@@ -15,12 +15,17 @@ class Date
     self.strftime("%d/%m/%Y")
   end
 
+
   def to_db
     self.strftime("%Y%m%d")
   end
 end
 
 class Time
+  def fecha_hora
+    self.strftime("%d/%m/%Y %H:%M")
+  end
+
   def fecha
     self.strftime("%d/%m/%Y")
   end

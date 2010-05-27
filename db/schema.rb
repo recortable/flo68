@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.integer  "position"
+    t.string   "position"
     t.integer  "width"
     t.integer  "height"
     t.datetime "created_at"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
     t.string   "body"
     t.string   "email"
     t.string   "author"
+    t.datetime "published_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -80,7 +81,7 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
     t.string   "preview_content_type"
     t.integer  "preview_file_size"
     t.datetime "preview_updated_at"
-    t.integer  "position"
+    t.string   "position"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

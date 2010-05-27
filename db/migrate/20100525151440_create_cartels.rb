@@ -6,7 +6,7 @@ class CreateCartels < ActiveRecord::Migration
       t.string :image_content_type
       t.integer :image_file_size
       t.datetime :image_updated_at
-      t.integer :position
+      t.string :position
       t.integer :width
       t.integer :height
       t.timestamps

@@ -1,7 +1,11 @@
+<% content_for :head do %>
+  <link href='http://fonts.googleapis.com/css?family=Cantarell:bold' rel='stylesheet' type='text/css' />
+<% end %>
+
 <div id="content">
   <div id="faq_head">&nbsp;</div>
-  <%= image_tag 'elements/faq_es.png', :width => 387, :height => 1507 %>
+  <div id="faq_body"><%= markdown @section.body %></div>
 </div>
 <div id="side">
-  <%= image_tag 'elements/imagen_faq.png', :width => 226, :height => 501 %>
+<%= image_tag 'elements/imagen_faq.png', :width => 226, :height => 501 %>
 </div>

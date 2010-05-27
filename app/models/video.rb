@@ -3,7 +3,7 @@ class Video < ActiveRecord::Base
   has_many :comments
   has_attached_file :preview
   has_attached_file :animation
-  acts_as_list :scope => :section
+  acts_as_list :scope => :section_id
 
   def to_param
     "#{self.id}-#{self.title.parameterize}"

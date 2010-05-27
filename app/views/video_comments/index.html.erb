@@ -1,0 +1,7 @@
+<% title("Comentarios al vídeo '#{@video.title}'")   %>
+
+<div class="actions">
+  <%= link_to 'Modificar éste video', edit_section_video_path(@video.section, @video) %>
+</div>
+
+<%= render 'comments/comments', :comments => @comments, :section => @video.section %>

@@ -5,6 +5,7 @@ class CreateComments < ActiveRecord::Migration
       t.string :body, :length => 1024
       t.string :email
       t.string :author
+      t.datetime :published_at
       t.timestamps
     end
   end

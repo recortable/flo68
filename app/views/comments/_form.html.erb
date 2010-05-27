@@ -1,12 +1,13 @@
 
-<% semantic_form_for([@section,@comment]) do |form|  %>
+<% semantic_form_for([@comment]) do |form|  %>
   <% form.inputs do %>
-    <%= form.input :position %>
+    <%= form.input :author %>
     <%= form.input :email %>
     <%= form.input :body, :as => :text %>
+    <%= form.input :published_at %>
   <% end %>
   <% form.buttons do %>
     <%= form.commit_button %>
-    <%= link_to 'Cancelar', section_videos_path(@section) %>
+    <%= link_to 'Cancelar', section_video_video_comments_path(@comment.video.section, @comment.video) %>
   <% end %>
 <% end %>

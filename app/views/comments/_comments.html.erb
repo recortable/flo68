@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <td>Video</td>
+      <td>&nbsp;</td>
+      <td>Author</td>
+      <td>Email</td>
+      <td>Texto</td>
+      <td>Fue el...</td>
+      <td />
+    </tr>
+  </thead>
+  <tbody>
+    <% comments.each do |comment| %>
+      <tr>
+        <td><%= image_tag comment.video.preview.url %></td>
+        <td><%= link_to comment.video.title, section_video_video_comments_path(comment.video.section, comment.video) %></td>
+        <td><%= h comment.author %></td>
+        <td><%= h comment.email %></td>
+        <td style="font-size: 80%;"><%= h comment.body %></td>
+        <td><%= h comment.published_at.fecha_hora %></td>
+        <td class="actions">
+          <%= link_to t('app.edit'), edit_comment_path(comment) %>
+          <%= link_to 'Borrar', comment_path(comment), :method => :delete, :confirm => '¿¡Estas segura!?' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

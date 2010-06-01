@@ -275,7 +275,7 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 }
 #elpalo {
   width: 434px;
-  height: 408px;
+  height: 420px;
   background: url('/images/pieces/elpalo.gif') no-repeat;
   overflow: hidden;
 }
@@ -286,15 +286,15 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 }
 #planos .video {
   margin-top: 36px;
-  margin-left: 7px;
+  margin-left: 6px;
 }
 #ensayos .video {
-  margin-top: 34px;
-  margin-left: 7px;
+  margin-top: 35px;
+  margin-left: 6px;
 }
 #elpalo .video {
-  margin-top: 34px;
-  margin-left: 7px;
+  margin-top: 36px;
+  margin-left: 6px;
 }
 #faq_head {
   width: 442px;

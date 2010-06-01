@@ -2,7 +2,7 @@
 <% content_for :head do -%>
   <script type="text/javascript">
     $(function() {
-      $("#main_video").vimeo({url: '<%= @video.url %>', width: 426, height: 319});
+      $("#main_video").vimeo({url: '<%= @video.url %>', generator : '<%= @video.generator %>', width: 426, height: 319});
 
       var carteles = [];
   <% Cartel.all.each do |cartel| %>

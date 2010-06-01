@@ -117,13 +117,21 @@ body.faq #banner {background-image: url('/images/pieces/banner_faq.png');}
 #video_list .video p {display: block; margin: 10px 0 0 120px; background-color: black; width: 70%;}
 #video_list .video a {text-decoration: none; color: @rojo; }
 
-#comments {margin-bottom: 20px; color: @rojo; .monospace; border: 1px solid @verde; border-top: 0px solid transparent;}
+#comments {padding-top: 10px;margin-bottom: 20px; color: @rojo; .monospace; border: 1px solid @verde; border-top: 0px solid transparent;}
 #comments p {margin: 0 10px;}
 #comments p.head {padding: 3px; background-color: black; color: @verde;}
 #comments p.body {padding: 3px; margin-bottom: 10px; background-color: black;}
 #comments form {background-color: black; display: block; margin-bottom: 20px;}
-#comments input, #comments textarea {padding: 2px; background-color: black;
+#comments input, #comments textarea {padding: 2px; background-color: black; margin-top: -1px;
                                      color: @verde; border: 1px solid @verde; }
+#comments p.field { padding-left: 10px;}
+#comments p.field input {width: 300px;}
+#comments textarea {width: 380px; border-bottom: 0px solid black;}
+#comments p.submit {width: 100%; overflow: hidden;}
+#comments span.gap {width: 295px; height: 27px; float: left; display: block;
+                    border-left: 1px solid @verde;  border-bottom: 1px solid @verde;}
+#comments input[type=submit] {width: 91px; height: 27px; background-image: url('/images/pieces/envia.png');
+                              margin-top: 0; border: 0px solid black;}
 #comments form p {position: relative;}
 #comments form label {position:absolute; top: 2px; margin-left: 2px;}
 

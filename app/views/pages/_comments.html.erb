@@ -2,7 +2,7 @@
 
 <% comments.each do |comment| %>
   <% div_for comment do %>
-    <p class="head"><%= comment.author %> <span class="date"><%= comment.published_at.fecha %></span></p>
+    <p class="head"><span class="date"><%= comment.published_at.fecha %></span> <%= comment.author %></p>
     <p class="body"><%= comment.body %></p>
   <% end %>
 <% end %>

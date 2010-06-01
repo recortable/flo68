@@ -1,10 +1,10 @@
 <% form_for(@comment, :url => add_comment_path) do |form| %>
   <%= form.hidden_field :video_id %>
-  <p>
+  <p class="field">
     <%= form.label :author, 'Nombre, imprescindible' %>
     <%= form.text_field :author, :autocomplete => 'off' %>
   </p>
-  <p>
+  <p class="field">
     <%= form.label :email, 'Email, no aparecerá publicado' %>
     <%= form.text_field :email, :autocomplete =>'off' %>
   </p>
@@ -12,5 +12,8 @@
     <%= form.label :body, 'Deja aquí tu comentario' %>
     <%= form.text_area :body, :autocomplete => 'off' %>
   </p>
+  <p class="submit">
+    <span class="gap">&nbsp;</span>
   <%= form.submit 'Enviar' %>
+  </p>
 <% end %>

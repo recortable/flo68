@@ -35,7 +35,7 @@ class Seeder
       puts "Video: #{name} (#{entry})"
       video = Video.find_or_create_by_title(name)
       video.section_id = section.id
-      video.generator = 'vimeo'
+      video.generator = 'no-disponible'
       video.url = 'http://vimeo.com/6631139'
       filename = "#{folder}/#{entry}"
       raise Exception.new("#{filename} no existe!") unless File.exists?(filename)

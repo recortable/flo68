@@ -1,3 +1,4 @@
+db/data.yml
 public/system/previews
 public/system/**
 log/*

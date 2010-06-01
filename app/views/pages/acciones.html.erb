@@ -6,11 +6,11 @@
 
       var carteles = [];
   <% Cartel.all.each do |cartel| %>
-        carteles.push({title : '<%= cartel.title %>', url : '<%= cartel.image.url %>',
-          width : <%= cartel.width %> , height : <%= cartel.height %>});
+      carteles.push({title : '<%= cartel.title %>', url : '<%= cartel.image.url %>',
+        width : <%= cartel.width %> , height : <%= cartel.height %>});
   <% end %>
-      $("#slideshow").slide(carteles);
-    });
+    $("#slideshow").slide(carteles);
+  });
   </script>
 <% end -%>
 
@@ -27,6 +27,7 @@
   </div>
   <div id="comments-head">&nbsp;</div>
   <div id="comments">
+    <%= render 'comment' %>
     <%= render 'comments', :object => @video.comments %>
   </div>
 </div>

@@ -5,9 +5,11 @@ class CommentsController < AdminController
 
   def destroy
     destroy! {section_video_video_comments_path(@comment.video.section, @comment.video)}
+    expire_video(@comment.video)
   end
 
   def update
     update! { section_video_video_comments_path(@comment.video.section, @comment.video)}
+    expire_video(@comment.video)
   end
 end

@@ -35,10 +35,10 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
   end
 
   create_table "sections", :force => true do |t|
-    t.string   "name"
-    t.string   "title"
-    t.string   "body"
-    t.string   "video"
+    t.string   "name",       :limit => 32
+    t.string   "title",      :limit => 128
+    t.string   "body",       :limit => 4096
+    t.string   "video",      :limit => 1024
     t.datetime "created_at"
     t.datetime "updated_at"
   end

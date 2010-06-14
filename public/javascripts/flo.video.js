@@ -3,7 +3,7 @@
     $.fn.slide = function(list, settings) {
         var config = {
             height: 550,
-            width: 430,
+            width: 430
         };
 
         if (settings) $.extend(config, settings);
@@ -65,7 +65,8 @@
             allow_full_screen : true,
             show_byline: 0,
             show_portrait: 0,
-            fullscreen: 0
+            fullscreen: 0,
+            generator : 'vimeo'
         };
 
         if (settings) $.extend(config, settings);
@@ -76,6 +77,22 @@
             config.vimeo_id = config.url.substring(last_bar + 1);
         }
 
+
+        var code;
+        if (config.vimeo_id != undefined && config.generator == 'vimeo') {
+            code = generate_vimeo(config);
+        } else {
+            code = generate_not_available(config);
+        }
+
+        this.each(function() {
+            $(this).html(code);
+        });
+
+        return this;
+    };
+
+    function generate_vimeo(config) {
         var code = '<object width="' + config.width + '" height="'+ config.height + '">';
         code += '<param name="allowfullscreen" value="' + config.allow_full_screen +  '" />';
         code += '<param name="allowscriptaccess" value="always" /><param name="movie" value="http://vimeo.com/moogaloop.swf?clip_id=' + config.vimeo_id + '&amp;'
@@ -83,13 +100,12 @@
         code += '<embed src="http://vimeo.com/moogaloop.swf?clip_id='+ config.vimeo_id + '&amp;server=vimeo.com&amp;show_title=' + config.show_title;
         code += '&amp;show_byline='+ config.show_byline + '&amp;show_portrait=0&amp;color=00adef&amp;fullscreen=1" type="application/x-shockwave-flash" allowfullscreen="' + config.allow_full_screen + '" allowscriptaccess="always"'
         code += 'width="' + config.width + '" height="' + config.height + '"></embed></object>'
+        return code;
+    }
 
-        if (config.vimeo_id != undefined) {
-            this.each(function() {
-                $(this).html(code);
-            });
-        }
-        return this;
-    };
+    function generate_not_available(config) {
+        var code = '<img src="/images/elements/coming_soon.png" width="426" height="319" />';
+        return code;
+    }
 
 })(jQuery);

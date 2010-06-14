@@ -2,15 +2,15 @@
 <% content_for :head do -%>
   <script type="text/javascript">
     $(function() {
-      $("#main_video").vimeo({url: '<%= @video.url %>', width: 426, height: 319});
+      $("#main_video").vimeo({url: '<%= @video.url %>', generator : '<%= @video.generator %>', width: 426, height: 319});
 
       var carteles = [];
   <% Cartel.all.each do |cartel| %>
-        carteles.push({title : '<%= cartel.title %>', url : '<%= cartel.image.url %>',
-          width : <%= cartel.width %> , height : <%= cartel.height %>});
+      carteles.push({title : '<%= cartel.title %>', url : '<%= cartel.image.url %>',
+        width : <%= cartel.width %> , height : <%= cartel.height %>});
   <% end %>
-      $("#slideshow").slide(carteles);
-    });
+    $("#slideshow").slide(carteles);
+  });
   </script>
 <% end -%>
 
@@ -27,6 +27,7 @@
   </div>
   <div id="comments-head">&nbsp;</div>
   <div id="comments">
+    <%= render 'comment' %>
     <%= render 'comments', :object => @video.comments %>
   </div>
 </div>

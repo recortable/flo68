@@ -7,4 +7,21 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
+
+  private
+  def expire_section(section)
+    expire_page :controller => 'pages', :action => 'section', :id => section.name
+  end
+
+  def expire_video(video)
+    section = video.section
+    if section.name == 'intro'
+      expire_page :controller => 'pages', :action => 'intro', :id => video
+    elsif section.name == 'acciones'
+      expire_page :controller => 'pages', :action => 'acciones', :id => video
+    else
+      expire_page :controller => 'pages', :action => 'section', :id => section.name
+    end
+
+  end
 end

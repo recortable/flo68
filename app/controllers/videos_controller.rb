@@ -4,6 +4,7 @@ class VideosController < AdminController
 
   def update
     update! { section_videos_path(@section)}
+    expire_section  @section
   end
 
   def create

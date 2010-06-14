@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   layout 'pages'
+  caches_page :index, :intro, :acciones, :section
+  protect_from_forgery :except => [:add_comment]
 
   def index
     redirect_to intro_path
@@ -9,10 +11,10 @@ class PagesController < ApplicationController
     @comment = Comment.new(params[:comment])
     @video = @comment.video
     @section = @video.section
+    expire_video(@video)
     if @comment.save
       redirect_to :action => @section.name, :id => @video
     else
-      @comment = Comment.new(:video => @video)
       render :action => @section.name
     end
   end

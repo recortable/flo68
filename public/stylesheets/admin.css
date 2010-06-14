@@ -217,6 +217,17 @@ fieldset.buttons ol a {
   margin-top: 0.8em;
   color: gray;
 }
+.properties p {
+  display: block;
+  widht: 100%;
+  overflow: hidden;
+}
+.properties label {
+  width: 10em;
+  float: left;
+  text-align: right;
+  margin-right: 1em;
+}
 table {
   font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Verdana, Tahoma, sans-serif;
   width: 100%;

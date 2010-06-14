@@ -10,12 +10,8 @@ class CommentsController < AdminController
 
   def update
     update! do
-      next_comment = Comment.first(:conditions => ["id > ?", @comment.id], :order => 'id')
-      if next_comment
-        edit_comment_path(next_comment)
-      else
-        section_video_video_comments_path(@comment.video.section, @comment.video)
-      end
+      edit_comment_path(@comment)
+        #section_video_video_comments_path(@comment.video.section, @comment.video)
     end
     expire_video(@comment.video)
   end

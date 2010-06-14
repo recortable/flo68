@@ -1,4 +1,7 @@
 
+<div class="properties">
+  <p><label>Vídeo</label><span><%= @comment.video.title %></span></p>
+</div>
 <% semantic_form_for([@comment]) do |form|  %>
   <% form.inputs do %>
     <%= form.input :author %>
@@ -9,5 +12,7 @@
   <% form.buttons do %>
     <%= form.commit_button %>
     <%= link_to 'Cancelar', section_video_video_comments_path(@comment.video.section, @comment.video) %>
+    <%= link_to 'Anterior', edit_comment_path(@comment.prev_comment) if @comment.prev_comment %>
+    <%= link_to 'Siguiente', edit_comment_path(@comment.next_comment) if @comment.next_comment %>
   <% end %>
 <% end %>

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100525151440) do
+ActiveRecord::Schema.define(:version => 20100614094951) do
 
   create_table "cartels", :force => true do |t|
     t.string   "title"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(:version => 20100525151440) do
 
   create_table "comments", :force => true do |t|
     t.integer  "video_id"
-    t.string   "body"
+    t.string   "body",         :limit => 1024
     t.string   "email"
     t.string   "author"
     t.datetime "published_at"

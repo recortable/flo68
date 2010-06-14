@@ -1,6 +1,6 @@
 
 <div class="properties">
-  <p><label>Vídeo</label><span><%= @comment.video.title %></span></p>
+  <p><label>Vídeo</label><span><%= link_to @comment.video.title, section_video_video_comments_path(@comment.video.section, @comment.video) %></span></p>
 </div>
 <% semantic_form_for([@comment]) do |form|  %>
   <% form.inputs do %>

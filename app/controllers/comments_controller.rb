@@ -10,8 +10,7 @@ class CommentsController < AdminController
 
   def update
     update! do
-      edit_comment_path(@comment)
-        #section_video_video_comments_path(@comment.video.section, @comment.video)
+      section_video_video_comments_path(@comment.video.section, @comment.video)
     end
     expire_video(@comment.video)
   end

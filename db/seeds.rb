@@ -123,7 +123,7 @@ class Commenteer
   end
 
   def set_video(name)
-    name = name.strip.chars.downcase
+    name = name.strip.downcase.titleize
     @video = Video.find_by_title(name)
     if @video.nil?
       puts "*** FALTA: #{name.downcase}"

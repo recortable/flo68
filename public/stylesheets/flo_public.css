@@ -219,12 +219,12 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 #comments p.head {
   padding: 3px;
   background-color: black;
-  color: #93f7f7;
 }
 #comments p.body {
   padding: 3px;
   margin-bottom: 10px;
   background-color: black;
+  color: #93f7f7;
 }
 #comments form {
   background-color: black;
@@ -269,12 +269,14 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   background-image: url('/images/pieces/envia.png');
   margin-top: 0;
   border: 0px solid black;
+  text-indent: -1000px;
+  overflow: hidden;
 }
 #comments form p { position: relative; }
 #comments form label {
   position: absolute;
   top: 2px;
-  margin-left: 2px;
+  margin-left: 10px;
 }
 #slideshow {
   height: 600px;

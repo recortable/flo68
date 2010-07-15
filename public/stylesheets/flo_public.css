@@ -340,11 +340,11 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 #faq_body {
   color: #cc0000;
   font-family: 'Yanone Kaffeesatz', arial, serif;
-  font-size: 20px;
+  font-size: 27px;
 }
 #faq_body p {
   margin-top: 2em;
-  line-height: 1.7em;
+  line-height: 1.3em;
   font-variant: small-caps;
 }
 #faq_body em { font-weight: bold; }

@@ -192,8 +192,11 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 }
 #video_list .video label {
   display: block;
-  margin: 30px 0 0 120px;
+  margin: 10px 0 0 120px;
   font-variant: small-caps;
+  font-size: 150%;
+  height: 1.1em;
+  overflow: hidden;
 }
 #video_list .video p {
   display: block;
@@ -337,10 +340,11 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 #faq_body {
   color: #cc0000;
   font-family: 'Yanone Kaffeesatz', arial, serif;
-  font-size: 17px;
+  font-size: 20px;
 }
 #faq_body p {
   margin-top: 2em;
   line-height: 1.7em;
   font-variant: small-caps;
 }
+#faq_body em { font-weight: bold; }

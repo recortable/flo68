@@ -6,6 +6,9 @@ class CartelsController < AdminController
   end
 
   def create
-    create! {cartels_path}
+    create! do
+      @cartel.touch
+      cartels_path
+    end
   end
 end

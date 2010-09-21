@@ -217,6 +217,8 @@ fieldset.buttons ol a {
   margin-top: 0.8em;
   color: gray;
 }
+fieldset li.commit input { padding: 0.2em 1em; }
+fieldset.buttons a { padding-top: 0.2em; }
 .properties p {
   display: block;
   widht: 100%;

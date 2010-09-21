@@ -20,6 +20,8 @@
         (<%= cartel.width %> x <%= cartel.height %> px)</td>
       <td class="actions">
         <%= link_to 'Modificar', edit_cartel_path(cartel ) %>
+        <%= link_to 'Borrar', cartel_path(cartel), :method => :delete,
+          :confirm => "Estás segura de borrar el cartel '#{cartel.title}'" %>
       </td>
     </tr>
     <% end %>

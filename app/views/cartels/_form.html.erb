@@ -1,0 +1,19 @@
+
+<% semantic_form_for(@cartel, :html => {:multipart => true}) do |form|  %>
+  <% form.inputs do %>
+    <%= form.input :title%>
+    <% if @cartel.image? %>
+      <div class="attachment">
+        <p>Actualmente la imágen es:</p>
+        <p>La imágen no se puede modificar. Si quieres puedes borrar el cartel completo <%= link_to 'aquí', cartels_path %></p>
+        <%= image_tag @cartel.image.url %>
+      </div>
+    <% else %>
+      <%= form.input :image, :as => :file %>
+    <% end %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+    <%= link_to 'Cancelar', cartels_path %>
+  <% end %>
+<% end %>

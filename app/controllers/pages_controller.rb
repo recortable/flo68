@@ -40,5 +40,12 @@ class PagesController < ApplicationController
     render :action => 'acciones'
   end
 
+  private
+  def simple_auth
+     authenticate_or_request_with_http_basic("Public Flo Realm") do |username, password|
+      username == "pacalamonea" && password == "pacalamonea"
+    end
+  end
+
 
 end

@@ -344,7 +344,7 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
 }
 #faq_body p {
   margin-top: 2em;
-  line-height: 1.3em;
+  line-height: 1.4em;
   font-variant: small-caps;
 }
 #faq_body em { font-weight: bold; }

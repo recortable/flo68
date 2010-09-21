@@ -1,3 +1,8 @@
+<div class="actions">
+  <%= link_to 'Añadir un cartel', new_cartel_path %>
+</div>
+
+
 <table>
   <thead>
     <tr>
@@ -13,6 +18,9 @@
       <td><%= number_to_human_size(cartel.image.size) %>
         <%= cartel.image.content_type %><br/>
         (<%= cartel.width %> x <%= cartel.height %> px)</td>
+      <td class="actions">
+        <%= link_to 'Modificar', edit_cartel_path(cartel ) %>
+      </td>
     </tr>
     <% end %>
   </tbody>

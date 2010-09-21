@@ -3,7 +3,7 @@
   <% form.inputs do %>
     <%= form.input :title%>
     <%= form.input :url %>
-    <%= form.input :generator, :as => 'select', :collection => ['vimeo', 'no-disponible'], :include_blank => false %>
+    <%= form.input :generator, :as => 'select', :collection => ['movshare', 'vimeo', 'no-disponible'], :include_blank => false %>
     <%= form.input :preview, :as => :file %>
     <div class="attachment">
       <% if @video.preview? %>

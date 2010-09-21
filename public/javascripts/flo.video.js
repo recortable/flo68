@@ -57,7 +57,7 @@
         return this;
     }
 
-    $.fn.vimeo = function(settings) {
+    $.fn.video = function(settings) {
         var config = {
             height: 319,
             width: 426,
@@ -74,13 +74,18 @@
         config.url = config.url.trim();
         if (config.url != null && config.url.length > 0) {
             var last_bar = config.url.lastIndexOf('/');
-            config.vimeo_id = config.url.substring(last_bar + 1);
+            config.video_id = config.url.substring(last_bar + 1);
         }
 
 
         var code;
-        if (config.vimeo_id != undefined && config.generator == 'vimeo') {
+        if (config.video_id != undefined) {
+
+        if (config.generator == 'vimeo') {
             code = generate_vimeo(config);
+        } else if (config.generator == 'movshare') {
+            code = generate_movshare(config);
+        }
         } else {
             code = generate_not_available(config);
         }
@@ -91,6 +96,12 @@
 
         return this;
     };
+
+    function generate_movshare(config) {
+        var code = "<iframe style='overflow: hidden; border: 0; width: 720px; height: 362px' src='http://www.movshare.net/embed/";
+        code += config.video_id + "?width=" + config.width + "&height=" + config.height + "' scrolling='no'></iframe>";
+        return code;
+    }
 
     function generate_vimeo(config) {
         var code = '<object width="' + config.width + '" height="'+ config.height + '">';

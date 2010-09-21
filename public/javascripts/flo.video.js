@@ -77,15 +77,15 @@
             config.video_id = config.url.substring(last_bar + 1);
         }
 
-
         var code;
         if (config.video_id != undefined) {
-
-        if (config.generator == 'vimeo') {
-            code = generate_vimeo(config);
-        } else if (config.generator == 'movshare') {
-            code = generate_movshare(config);
-        }
+            if (config.generator == 'vimeo') {
+                code = generate_vimeo(config);
+            } else if (config.generator == 'movshare') {
+                code = generate_movshare(config);
+            } else {
+                code = generate_not_available(config);
+            }
         } else {
             code = generate_not_available(config);
         }

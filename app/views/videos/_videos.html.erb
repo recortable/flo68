@@ -15,14 +15,16 @@
     <% videos.each do |video| %>
       <tr>
         <td class="actions">
-          <%= link_to 'Modificar vídeo', edit_section_video_path(video.section, video) %>
-          <%= link_to 'Ver comentarios', section_video_video_comments_path(video.section, video) %>
+          <%= link_to 'Modificar', edit_section_video_path(video.section, video) %>
+          <%= link_to 'Borrar', section_video_path(video.section, video), :method => :delete, 
+            :confirm => "Vas a borrar el video '#{video.title}' (¡no se puede deshacer!) ¿Estas segura?" %>
+          <%= link_to 'Comentarios', section_video_video_comments_path(video.section, video) %>
         </td>
         <td><%= image_tag( video.preview.url ) if video.preview? %></td>
         <td><%= image_tag( video.animation.url ) if video.animation? %></td>
         <td><%= h  video.position %></td>
         <td><%= link_to video.title, section_video_video_comments_path(video.section, video) %></td>
-        <td><%= h video.url %></td>
+        <td><%= h(truncate(video.url, :length => 100)) %></td>
         <td><%= h video.generator %></td>
       </tr>
     <% end %>

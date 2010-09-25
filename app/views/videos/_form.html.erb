@@ -2,8 +2,8 @@
 <% semantic_form_for([@section,@video], :html => {:multipart => true}) do |form|  %>
   <% form.inputs do %>
     <%= form.input :title%>
-    <%= form.input :url, :as => :text, :rows => 3 %>
     <%= form.input :generator, :as => 'select', :collection => ['youtube', 'movshare', 'vimeo', 'embed', 'no-disponible'], :include_blank => false %>
+    <%= form.input :url, :as => :text, :rows => 3 %>
     <%= form.input :preview, :as => :file %>
     <div class="attachment">
       <% if @video.preview? %>

@@ -5,6 +5,7 @@ es:
       user: "Usuario"
       comment: "comentario"
       video: "video"
+      tutorial: "videos del tutorial"
     attributes:
       user:
         email: "Santo"
@@ -19,6 +20,13 @@ es:
         generator: "Origen"
         preview: "Imágen"
         animation: "Imágen animada"
+      tutorial:
+        planos_generator: "Vídeo: Planos - Origen"
+        planos_url: "Vídeo: Planos - Dirección"
+        ensayos_generator: "Vídeo: Ensayos - Origen"
+        ensayos_url: "Vídeo: Ensayos - Dirección"
+        elpalo_generator: "Vídeo: Elpalo - Origen"
+        elpalo_url: "Vídeo: Elpalo - Dirección"
 
   formtastic:
     actions:

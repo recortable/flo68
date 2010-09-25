@@ -1,10 +1,11 @@
 
+<% @tutorial = Tutorial.first %>
 <% content_for :head do %>
   <script type="text/javascript">
     $(function() {
-      $("#planos .video").video({url: 'http://vimeo.com/6631139', generator: 'none', width: 426, height: 319});
-      $("#ensayos .video").video({url: 'http://vimeo.com/6631139', generator: 'none', width: 426, height: 319});
-      $("#elpalo .video").video({url: 'http://vimeo.com/6631139', generator: 'none', width: 426, height: 319});
+      $("#planos .video").video({url: '<%= @tutorial.planos_url %>', generator: '<%= @tutorial.planos_generator %>', width: 426, height: 319});
+      $("#ensayos .video").video({url: '<%= @tutorial.ensayos_url %>', generator: '<%= @tutorial.ensayos_generator %>', width: 426, height: 319});
+      $("#elpalo .video").video({url: '<%= @tutorial.elpalo_url %>', generator: '<%= @tutorial.elpalo_generator %>', width: 426, height: 319});
     });
   </script>
 <% end %>

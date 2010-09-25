@@ -205,6 +205,7 @@ fieldset li.check_boxes ol {
 }
 fieldset li.check_boxes li { display: block; }
 fieldset #video_url { height: 4em; }
+fieldset.tutorial textarea { height: 8em; }
 fieldset.buttons ol li.commit {
   float: left;
   margin-top: 10px;

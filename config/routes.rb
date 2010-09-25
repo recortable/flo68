@@ -18,6 +18,7 @@ ActionController::Routing::Routes.draw do |map|
     section.resources :section_comments, :as => 'comentarios'
   end
   map.resources(:comments, :as => 'comentarios', :path_prefix => 'admin')
+  map.resource(:videos_tutorial, :controller => 'tutorials', :path_prefix => 'admin')
 
   map.admin '/admin', :controller => 'sections', :action => 'index'
   map.resources :cartels, :as => 'carteles', :path_prefix => 'admin'

@@ -1,0 +1,17 @@
+<% title 'Editar vídeos del tutorial' %>
+
+<% semantic_form_for(@tutorial, :url => videos_tutorial_path) do |form| %>
+  <% form.inputs(:class => 'tutorial') do %>
+    <%= form.input :planos_generator, :as => 'select', :collection => ['youtube', 'movshare', 'vimeo', 'embed', 'no-disponible'], :include_blank => false %>
+    <%= form.input :planos_url, :as => :text, :rows => 3 %>
+    <%= form.input :ensayos_generator, :as => 'select', :collection => ['youtube', 'movshare', 'vimeo', 'embed', 'no-disponible'], :include_blank => false %>
+    <%= form.input :ensayos_url, :as => :text, :rows => 3 %>
+    <%= form.input :elpalo_generator, :as => 'select', :collection => ['youtube', 'movshare', 'vimeo', 'embed', 'no-disponible'], :include_blank => false %>
+    <%= form.input :elpalo_url, :as => :text, :rows => 3 %>
+  <% end %>
+  <% form.buttons do %>
+    <%= form.commit_button %>
+    <%= link_to 'Cancelar', videos_tutorial_path %>
+  <% end %>
+
+<% end %>

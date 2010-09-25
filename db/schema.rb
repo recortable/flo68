@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100925115443) do
+ActiveRecord::Schema.define(:version => 20100925120505) do
 
   create_table "cartels", :force => true do |t|
     t.string   "title"
@@ -44,6 +44,17 @@ ActiveRecord::Schema.define(:version => 20100925115443) do
   end
 
   add_index "sections", ["name"], :name => "index_sections_on_name"
+
+  create_table "tutorials", :force => true do |t|
+    t.string   "planos_generator",  :limit => 32
+    t.string   "ensayos_generator", :limit => 32
+    t.string   "elpalo_generator",  :limit => 32
+    t.string   "planos_url",        :limit => 1000
+    t.string   "ensayos_url",       :limit => 1000
+    t.string   "elpalo_url",        :limit => 1000
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                               :default => "", :null => false

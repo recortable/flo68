@@ -1,0 +1,32 @@
+<% title 'Vídeos en tutorial' %>
+
+<div class="actions">
+  <%= link_to 'Modificar vídeos de tutorial', edit_videos_tutorial_path %>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <td>Título</td>
+      <td>Enlace</td>
+      <td>Tipo</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Planos</td>
+      <td><%= @tutorial.planos_url %></td>
+      <td><%= @tutorial.planos_generator %></td>
+    </tr>
+    <tr>
+      <td>Ensayos</td>
+      <td><%= @tutorial.ensayos_url %></td>
+      <td><%= @tutorial.ensayos_generator %></td>
+    </tr>
+    <tr>
+      <td>Elpalo</td>
+      <td><%= @tutorial.elpalo_url %></td>
+      <td><%= @tutorial.elpalo_generator %></td>
+    </tr>
+  </tbody>
+</table>

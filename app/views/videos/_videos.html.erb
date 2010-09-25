@@ -2,6 +2,7 @@
 <table>
   <thead>
     <tr>
+      <td>&nbsp;</td>
       <td>Imágen</td>
       <td>Animación</td>
       <td>Posición</td>
@@ -13,16 +14,16 @@
   <tbody>
     <% videos.each do |video| %>
       <tr>
-        <td><%= image_tag( video.preview.url ) if video.preview? %></td>
-        <td><%= image_tag( video.animation.url ) if video.animation? %></td>
-        <td><%= video.position %></td>
-        <td><%= link_to video.title, section_video_video_comments_path(video.section, video) %></td>
-        <td><%= video.url %></td>
-        <td><%= video.generator %></td>
         <td class="actions">
           <%= link_to 'Modificar vídeo', edit_section_video_path(video.section, video) %>
           <%= link_to 'Ver comentarios', section_video_video_comments_path(video.section, video) %>
         </td>
+        <td><%= image_tag( video.preview.url ) if video.preview? %></td>
+        <td><%= image_tag( video.animation.url ) if video.animation? %></td>
+        <td><%= h  video.position %></td>
+        <td><%= link_to video.title, section_video_video_comments_path(video.section, video) %></td>
+        <td><%= h video.url %></td>
+        <td><%= h video.generator %></td>
       </tr>
     <% end %>
   </tbody>

@@ -72,10 +72,10 @@
         if (settings) $.extend(config, settings);
 
         config.url = config.url.trim();
-        if (config.url != null && config.url.length > 0) {
-            var last_bar = config.url.lastIndexOf('/');
-            config.video_id = config.url.substring(last_bar + 1);
-        }
+            if (config.url != null && config.url.length > 0) {
+                var last_bar = config.url.lastIndexOf('/');
+                config.video_id = config.url.substring(last_bar + 1);
+            }
 
         var code;
         if (config.video_id != undefined) {
@@ -83,6 +83,10 @@
                 code = generate_vimeo(config);
             } else if (config.generator == 'movshare') {
                 code = generate_movshare(config);
+            } else if (config.generator == 'youtube') {
+                code = generate_youtube(config);
+            } else if (config.generator == 'embed') {
+                code = generate_embed(config);
             } else {
                 code = generate_not_available(config);
             }
@@ -96,6 +100,19 @@
 
         return this;
     };
+
+    function generate_embed(config) {
+        return config.url;
+    }
+
+    function generate_youtube(config) {
+        var index = config.video_id.lastIndexOf('=') + 1;
+        config.video_id = config.video_id.substring(index);
+        config.width = config.width + 2;
+        console.log("Video: " + config.video_id);
+        var code = '<object width="' + config.width + '" height="'+ config.height + '"><param name="movie" value="http://www.youtube.com/v/' + config.video_id + '?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/' + config.video_id + '?fs=1&amp;hl=es_ES" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="' + config.width + '" height="'+ config.height + '"></embed></object>'
+        return code;
+    }
 
     function generate_movshare(config) {
         var code = "<iframe style='overflow: hidden; border: 0; width: 720px; height: 362px' src='http://www.movshare.net/embed/";

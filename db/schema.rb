@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100614094951) do
+ActiveRecord::Schema.define(:version => 20100925114715) do
 
   create_table "cartels", :force => true do |t|
     t.string   "title"
@@ -71,8 +71,8 @@ ActiveRecord::Schema.define(:version => 20100614094951) do
   create_table "videos", :force => true do |t|
     t.integer  "section_id"
     t.string   "title"
-    t.string   "url"
-    t.string   "generator",              :default => "vimeo"
+    t.string   "url",                    :limit => 512
+    t.string   "generator",                             :default => "vimeo"
     t.string   "animation_file_name"
     t.string   "animation_content_type"
     t.integer  "animation_file_size"

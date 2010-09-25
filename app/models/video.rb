@@ -22,6 +22,9 @@
 #
 
 class Video < ActiveRecord::Base
+
+  GENERATORS = ['youtube limpio', 'youtube', 'movshare', 'vimeo', 'embed', 'no-disponible']
+
   belongs_to :section
   has_many :comments
   has_attached_file :preview

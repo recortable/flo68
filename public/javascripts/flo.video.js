@@ -72,10 +72,10 @@
         if (settings) $.extend(config, settings);
 
         config.url = config.url.trim();
-            if (config.url != null && config.url.length > 0) {
-                var last_bar = config.url.lastIndexOf('/');
-                config.video_id = config.url.substring(last_bar + 1);
-            }
+        if (config.url != null && config.url.length > 0) {
+            var last_bar = config.url.lastIndexOf('/');
+            config.video_id = config.url.substring(last_bar + 1);
+        }
 
         var code;
         if (config.video_id != undefined) {
@@ -83,6 +83,9 @@
                 code = generate_vimeo(config);
             } else if (config.generator == 'movshare') {
                 code = generate_movshare(config);
+            } else if (config.generator == 'youtube limpio') {
+                config.height += 26;
+                code = generate_youtube(config);
             } else if (config.generator == 'youtube') {
                 code = generate_youtube(config);
             } else if (config.generator == 'embed') {

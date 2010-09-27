@@ -112,7 +112,6 @@
         var index = config.video_id.lastIndexOf('=') + 1;
         config.video_id = config.video_id.substring(index);
         config.width = config.width + 2;
-        console.log("Video: " + config.video_id);
         var code = '<object width="' + config.width + '" height="'+ config.height + '"><param name="movie" value="http://www.youtube.com/v/' + config.video_id + '?fs=1&amp;hl=en_US"></param><param name="allowFullScreen" value="true"></param><param name="allowscriptaccess" value="always"></param><embed src="http://www.youtube.com/v/' + config.video_id + '?fs=1&amp;hl=es_ES" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="' + config.width + '" height="'+ config.height + '"></embed></object>'
         return code;
     }

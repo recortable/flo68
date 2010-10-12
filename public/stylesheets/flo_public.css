@@ -348,3 +348,7 @@ body.faq #banner { background-image: url('/images/pieces/banner_faq.png'); }
   font-variant: small-caps;
 }
 #faq_body em { font-weight: bold; }
+body.faq #side img {
+  margin-top: -1px;
+  margin-left: 1px;
+}
